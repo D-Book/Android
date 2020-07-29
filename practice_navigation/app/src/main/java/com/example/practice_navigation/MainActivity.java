@@ -3,6 +3,7 @@ package com.example.practice_navigation;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,10 +22,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     FragmentManager fm = getSupportFragmentManager();
-    private String[] myDataset;
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,17 +34,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 .commit();
         BottomNavigationView bnw = findViewById(R.id.nav_view);
         bnw.setOnNavigationItemSelectedListener(this);
-        recyclerView.setHasFixedSize(true);
+        if (savedInstanceState == null) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            RecyclerViewFragment fragment = new RecyclerViewFragment();
+            transaction.replace(R.id.text_home, fragment);
+            transaction.commit();
+        }
 
-        // use a linear layout manager
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-
-        RecyclerView recyclerView=findViewById(R.id.my_recycler_view);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        MyAdapter mAdapter = new MyAdapter(myDataset);
-        recyclerView.setAdapter(mAdapter);
 
 
     }
