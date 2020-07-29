@@ -4,4 +4,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="login_welcome">환영합니다</string>
+    <string name="login_email">이메일 주소</string>
+    <string name="login_password">비밀번호</string>
+    <string name="book_detail_explain">책 소개</string>
 </resources>

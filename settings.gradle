@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "practice_navigation"
+rootProject.name = "dbook"

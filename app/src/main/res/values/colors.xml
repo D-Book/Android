@@ -3,11 +3,24 @@
     <color name="primaryColor">#ffcdd2</color>
     <color name="primaryLightColor">#ffffff</color>
     <color name="primaryDarkColor">#cb9ca1</color>
-    <color name="secondaryColor">#f8bbd0</color>
-    <color name="secondaryLightColor">#ffeeff</color>
-    <color name="secondaryDarkColor">#c48b9f</color>
     <color name="primaryTextColor">#b71c1c</color>
+
+    <color name="secondaryColor">#C87B7B</color>
+    <color name="secondaryColorMedium">#A0C87B7B</color>
+    <color name="secondaryLightColor">#ffeeff</color>
+    <color name="secondaryDarkColor">#C87B7B</color>
     <color name="secondaryTextColor">#b71c1c</color>
+
     <color name="surfaceColor">#faf6f6</color>
-    <color name="onSurfaceColor">#8E8E93</color>
+    <color name="onSurfaceColor">#000000</color>
+    <color name="onSurfaceColorHigh">#DE000000</color>
+    <color name="onSurfaceColorMedium">#A0000000</color>
+    <color name="onSurfaceColorDisabled">#61000000</color>
+
+    <color name="onSecondaryColor">#FFFFFF</color>
+    <color name="onSecondaryColorHigh">#DEFFFFFF</color>
+    <color name="onSecondaryColorMedium">#A0FFFFFF</color>
+    <color name="onSecondaryColorDisabled">#61FFFFFF</color>
+
+    <color name="rippleColor">#A0FFFFFF</color>
 </resources>

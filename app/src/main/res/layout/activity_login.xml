@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:fontFamily="@font/jalnan"
-        android:text="환영합니다"
+        android:text="@string/login_welcome"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/jalnan"
-            android:hint="이메일 주소"
+            android:hint="@string/login_email"
             tools:layout_editor_absoluteX="0dp"
 
             tools:layout_editor_absoluteY="315dp" />
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/jalnan"
-            android:hint="비밀번호"
+            android:hint="@string/login_password"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="315dp" />
     </com.google.android.material.textfield.TextInputLayout>
