@@ -21,7 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
-        android:fontFamily="@font/jalnan"
         android:text="@string/login_welcome"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"

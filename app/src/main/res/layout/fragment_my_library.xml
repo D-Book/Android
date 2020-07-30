@@ -1,79 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_background"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            tools:src="@drawable/bg_my_library_sample" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#30000000" />
-
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/img_profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="58dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_my_library_sample"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:riv_border_color="@android:color/white"
-            app:riv_border_width="2dp"
-            app:riv_corner_radius="50dp" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_library_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_8dp"
-            android:textColor="@android:color/white"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_profile"
-            tools:text="누군가의 서재" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_4dp"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_library_name"
-            tools:text="dbook@dgsw.hs.kr" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_surface_top_rounded"
-        app:behavior_peekHeight="200dp"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+        android:scaleType="centerCrop"
+        tools:src="@drawable/bg_my_library_sample" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#30000000" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/header_height"
-            android:gravity="center"
-            android:text="다운로드한 책"
-            android:textSize="17sp"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_edit_24" />
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/img_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="58dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_border_color="@android:color/white"
+                app:riv_border_width="2dp"
+                app:riv_corner_radius="50dp"
+                tools:src="@drawable/bg_my_library_sample" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_library_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_profile"
+                tools:text="누군가의 서재" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_4dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_library_name"
+                tools:text="dbook@dgsw.hs.kr" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_surface_top_rounded"
+            app:behavior_peekHeight="250dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/header_height"
+                android:gravity="center"
+                android:text="다운로드한 책"
+                android:textSize="17sp"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

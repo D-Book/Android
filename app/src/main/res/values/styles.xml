@@ -9,7 +9,8 @@
         <item name="android:windowBackground">@color/surfaceColor</item>
 
         <item name="android:textViewStyle">@style/DefaultTextViewStyle</item>
-
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="DefaultTextViewStyle" parent="Widget.MaterialComponents.TextView">
