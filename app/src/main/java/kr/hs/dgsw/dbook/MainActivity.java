@@ -6,7 +6,6 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -21,19 +20,19 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        fm = getSupportFragmentManager();
-        fm.beginTransaction()
-                .replace(R.id.frame,new HomeFragment())
-                .commit();
-        BottomNavigationView bnw = findViewById(R.id.nav_view);
-        bnw.setOnNavigationItemSelectedListener(this);
-        if (savedInstanceState == null) {
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            RecyclerViewFragment fragment = new RecyclerViewFragment();
-            transaction.replace(R.id.text_home, fragment);
-            transaction.commit();
-        }
+        setContentView(R.layout.fragment_my_library);
+//        fm = getSupportFragmentManager();
+//        fm.beginTransaction()
+//                .replace(R.id.frame,new HomeFragment())
+//                .commit();
+//        BottomNavigationView bnw = findViewById(R.id.nav_view);
+//        bnw.setOnNavigationItemSelectedListener(this);
+//        if (savedInstanceState == null) {
+//            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//            RecyclerViewFragment fragment = new RecyclerViewFragment();
+//            transaction.replace(R.id.text_home, fragment);
+//            transaction.commit();
+//        }
 
 
 
