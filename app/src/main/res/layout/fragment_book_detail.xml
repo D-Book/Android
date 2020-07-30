@@ -16,25 +16,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|start"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="@dimen/margin_10dp"
             android:src="@drawable/ic_arrow_back_24" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_category"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
             android:layout_gravity="center"
             android:fontFamily="@font/jalnan"
+            android:gravity="center_vertical"
             android:textColor="@color/primaryTextColor"
             android:textSize="20sp"
             tools:text="소설" />
     </FrameLayout>
 
     <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/img_cover"
         android:layout_width="178dp"
         android:layout_height="240dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/margin_32dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,29 +44,98 @@
         tools:src="@drawable/cover_sample" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_28dp"
+        android:fontFamily="@font/jalnan"
+        android:textColor="@color/onSurfaceColorHigh"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_cover"
+        tools:text="소설보다 여름 2020" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:fontFamily="@font/jalnan"
+        android:textColor="@color/secondaryColor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_title"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title"
+        tools:text="강화길" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_publisher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:fontFamily="@font/jalnan"
+        android:textColor="@color/onSurfaceColorMedium"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/txt_author"
+        app:layout_constraintTop_toBottomOf="@+id/txt_author"
+        tools:text="제이펍" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_24dp"
+        android:fontFamily="@font/jalnan"
+        android:textColor="@color/onSurfaceColorMedium"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_publisher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_publisher"
+        tools:text="2020.02.05" />
+
+    <View
+        android:id="@+id/view_divier"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:background="@color/onSurfaceColorMedium"
+        app:layout_constraintTop_toBottomOf="@+id/txt_publisher" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_s_explain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_10dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/jalnan"
         android:text="@string/book_detail_explain"
         android:textColor="@color/onSurfaceColorHigh"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_explain"
-        app:layout_constraintStart_toStartOf="@+id/txt_explain" />
+        app:layout_constraintStart_toStartOf="@+id/txt_explain"
+        app:layout_constraintTop_toBottomOf="@id/view_divier" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_explain"
         android:layout_width="match_parent"
-        android:layout_height="147dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/button" />
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:layout_marginBottom="@dimen/margin_12dp"
+        android:fontFamily="@font/jalnan"
+        android:letterSpacing="0.1"
+        android:lineSpacingExtra="3dp"
+        android:textColor="@color/onSurfaceColorMedium"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/txt_s_explain"
+        tools:text="@string/book_detail_explain_sample" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/button"
         android:layout_width="75dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="@dimen/margin_10dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/bg_secondary_medium_rounded"
         android:padding="8dp"
@@ -78,8 +148,8 @@
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="@dimen/margin_10dp"
+        android:layout_marginEnd="@dimen/margin_10dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/bg_secondary_rounded"
         android:fontFamily="@font/jalnan"
