@@ -6,6 +6,14 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
+        <item name="android:windowBackground">@color/surfaceColor</item>
+
+        <item name="android:textViewStyle">@style/DefaultTextViewStyle</item>
+
     </style>
 
+    <style name="DefaultTextViewStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:fontFamily">@font/jalnan</item>
+        <item name="android:textColor">@color/onSurfaceColorHigh</item>
+    </style>
 </resources>

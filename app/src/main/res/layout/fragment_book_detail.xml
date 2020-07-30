@@ -3,24 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/surfaceColor">
+    android:layout_height="match_parent">
 
     <FrameLayout
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/header_height"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/header_height"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical|start"
-            android:layout_marginStart="@dimen/margin_10dp"
+            android:padding="@dimen/padding_10dp"
             android:src="@drawable/ic_arrow_back_24" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_category"
+            android:id="@+id/txt_genre"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -36,11 +35,13 @@
         android:layout_width="178dp"
         android:layout_height="240dp"
         android:layout_marginTop="@dimen/margin_32dp"
+        android:background="@drawable/bg_book_rounded_16dp"
+        android:elevation="8dp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_header"
-        app:riv_corner_radius="8dp"
+        app:riv_corner_radius="16dp"
         tools:src="@drawable/cover_sample" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -112,24 +113,29 @@
         android:text="@string/book_detail_explain"
         android:textColor="@color/onSurfaceColorHigh"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/txt_explain"
+        app:layout_constraintStart_toStartOf="@+id/txt_title"
         app:layout_constraintTop_toBottomOf="@id/view_divier" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txt_explain"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/margin_24dp"
         android:layout_marginTop="@dimen/margin_8dp"
         android:layout_marginBottom="@dimen/margin_12dp"
-        android:fontFamily="@font/jalnan"
-        android:letterSpacing="0.1"
-        android:lineSpacingExtra="3dp"
-        android:textColor="@color/onSurfaceColorMedium"
-        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/txt_s_explain"
-        tools:text="@string/book_detail_explain_sample" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_s_explain">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_explain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jalnan"
+            android:letterSpacing="0.1"
+            android:lineSpacingExtra="3dp"
+            android:textColor="@color/onSurfaceColorMedium"
+            android:textSize="16sp"
+            tools:text="@string/book_detail_explain_sample" />
+    </ScrollView>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/button"
