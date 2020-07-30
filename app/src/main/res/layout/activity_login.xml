@@ -10,7 +10,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/ic_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-
+        android:id="@+id/layout_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,7 +76,6 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="440dp">
 
-
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:layout_width="match_parent"
@@ -88,4 +87,17 @@
             tools:layout_editor_absoluteY="315dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/margin_24dp"
+        android:background="@drawable/bg_secondary_rounded_16dp"
+        android:fontFamily="@font/jalnan"
+        android:text="@string/login"
+        android:textColor="@color/onSecondaryColorHigh"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/layout_password"
+        app:layout_constraintStart_toStartOf="@+id/layout_password"
+        app:layout_constraintTop_toBottomOf="@+id/layout_password" />
 </androidx.constraintlayout.widget.ConstraintLayout>
