@@ -19,7 +19,7 @@
             android:src="@drawable/ic_arrow_back_24" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_genre"
+            android:id="@+id/txt_category"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -28,6 +28,12 @@
             android:textSize="20sp"
             tools:text="소설" />
     </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/header_divider_color"
+        app:layout_constraintTop_toBottomOf="@+id/layout_header" />
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/img_cover"
@@ -134,7 +140,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="@dimen/margin_10dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/bg_secondary_medium_rounded"
+        android:background="@drawable/bg_secondary_medium_rounded_8dp"
         android:padding="8dp"
         android:src="@drawable/ic_baseline_delete_forever_24"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -148,7 +154,7 @@
         android:layout_marginStart="@dimen/margin_10dp"
         android:layout_marginEnd="@dimen/margin_10dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/bg_secondary_rounded"
+        android:background="@drawable/bg_secondary_rounded_8dp"
         android:fontFamily="@font/jalnan"
         android:text="바로 읽기"
         android:textColor="@color/onSecondaryColorHigh"
