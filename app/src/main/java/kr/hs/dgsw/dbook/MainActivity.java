@@ -17,21 +17,17 @@ import kr.hs.dgsw.dbook.ui.notifications.NotificationsFragment;
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     FragmentManager fm = getSupportFragmentManager();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_bottom_navagation);
         fm = getSupportFragmentManager();
-        fm.beginTransaction()
-                .replace(R.id.frame,new HomeFragment())
-                .commit();
         BottomNavigationView bnw = findViewById(R.id.nav_view);
         bnw.setOnNavigationItemSelectedListener(this);
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             RecyclerViewFragment fragment = new RecyclerViewFragment();
-            transaction.replace(R.id.text_home, fragment);
+            transaction.replace(R.id.frame, fragment);
             transaction.commit();
         }
     }
