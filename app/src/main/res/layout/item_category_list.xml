@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:paddingTop="@dimen/padding_16dp"
+        android:layout_height="wrap_content"
         android:paddingHorizontal="@dimen/padding_16dp"
-        android:layout_height="wrap_content">
+        android:paddingTop="@dimen/padding_16dp">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -20,13 +20,15 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
-            android:layout_gravity="end"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             app:srcCompat="@drawable/ic_arrow_forward_24" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_book_list"
+        tools:orientation="horizontal" />
 </LinearLayout>
