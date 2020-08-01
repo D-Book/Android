@@ -1,0 +1,102 @@
+[
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pressed_true.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\drawable\\pressed_true.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_notifications.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_bottom_navagation.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\layout\\activity_bottom_navagation.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_import_contacts_24px.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\drawable\\ic_import_contacts_24px.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pressed_false.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\drawable\\pressed_false.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_home_black_24dp.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\drawable\\ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_view_carousel_24px.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\drawable\\ic_view_carousel_24px.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\font_font.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\font\\font.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\font_jalnan.otf.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\font\\jalnan.otf"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\layout_text_row_item.xml.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\layout\\text_row_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\sheep\\Downloads\\example.main\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sheep\\Downloads\\example.main\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    }
+]
