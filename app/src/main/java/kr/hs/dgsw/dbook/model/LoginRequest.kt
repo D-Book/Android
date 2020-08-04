@@ -1,5 +1,5 @@
 package kr.hs.dgsw.dbook.model
 
-class LoginRequest(val email:String, val password:String) {
+class LoginRequest(var email: String = "", var password: String = "") {
 
 }

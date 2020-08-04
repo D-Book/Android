@@ -16,20 +16,21 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class LoginActivity : AppCompatActivity() {
     val retrofit = Retrofit.Builder()
-        .baseUrl("http://10.80.162.210:8080/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
+            .baseUrl("http://10.80.162.210:8080/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     val api = retrofit.create(DbookApi::class.java)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        btn_login.setOnClickListener{
-            val email = editEmail.text.toString()
-            val password = password.text.toString()
-            val loginInfo= LoginRequest(email, password)
-            api.login(loginInfo).enqueue(object : Callback<LoginResponse>{
+        btn_login.setOnClickListener {
+            val loginInfo = LoginRequest().apply {
+                email = editEmail.text.toString()
+                password = this@LoginActivity.password.text.toString()
+            }
+            api.login(loginInfo).enqueue(object : Callback<LoginResponse> {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                    Log.d("TEST", "onFailure: "+t.message)
+                    Log.d("TEST", "onFailure: " + t.message)
                 }
 
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
