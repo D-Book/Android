@@ -1,5 +1,6 @@
 package kr.hs.dgsw.dbook.network
 
+import com.facebook.stetho.okhttp3.StethoInterceptor
 import kr.hs.dgsw.dbook.model.LoginResponse
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -12,12 +13,9 @@ class ApiManager {
     companion object {
 
         fun getInstance(): DbookApi {
-
-
             val retrofitBuilder = Retrofit.Builder()
                     .baseUrl("http://10.80.162.210:8080/")
                     .addConverterFactory(GsonConverterFactory.create())
-
 
             val interceptor = Interceptor() {
                 val token = LoginResponse.instance?.token
