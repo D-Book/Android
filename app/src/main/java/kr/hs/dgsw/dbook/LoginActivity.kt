@@ -7,20 +7,31 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kr.hs.dgsw.dbook.model.LoginRequest
 import kr.hs.dgsw.dbook.model.LoginResponse
+import kr.hs.dgsw.dbook.network.ApiManager
 import kr.hs.dgsw.dbook.network.DbookApi
+import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
+
+
+
 class LoginActivity : AppCompatActivity() {
+
+
+
+
     val retrofit = Retrofit.Builder()
             .baseUrl("http://10.80.162.210:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    val api = retrofit.create(DbookApi::class.java)
+    val api = ApiManager.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         btn_login.setOnClickListener {
