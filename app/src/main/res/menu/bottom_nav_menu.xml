@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_book_list"
         android:icon="@drawable/ic_import_contacts_24px"
         android:title="책 목록" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_my_library"
         android:icon="@drawable/ic_view_carousel_24px"
         android:title="내 서재" />
 </menu>

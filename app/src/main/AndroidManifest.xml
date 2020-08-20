@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kr.hs.dgsw.dbook">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -18,9 +18,8 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".bottom_navagation"></activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".bottom_navagation"/>
+        <activity android:name=".MainActivity" />
 
     </application>
 
