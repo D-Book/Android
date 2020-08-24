@@ -15,4 +15,7 @@
     <string name="book_detail_explain">책 소개</string>
     <string name="book_detail_explain_sample">『소설 보다: 여름 2019』(문학과지성사)가 출간됐다. [소설 보다]는 문학과지성사가 분기마다 ‘이 계절의 소설’을 선정, 홈페이지에 그 결과를 공개하고 이를 계절마다 엮어 1년에 4권씩 출간하는 단행본 시리즈로 2018년에 시작되었다.</string>
     <string name="login">로그인</string>
+    <string name="read_now">바로 읽기</string>
+    <string name="read_book">읽은 책</string>
+    <string name="saved_book">저장된 책</string>
 </resources>

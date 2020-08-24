@@ -132,7 +132,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/bg_surface_top_rounded"
             android:orientation="vertical"
-            app:behavior_peekHeight="250dp"
+            app:behavior_peekHeight="80dp"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
             <androidx.appcompat.widget.AppCompatTextView
