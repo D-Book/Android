@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bnw.setOnNavigationItemSelectedListener(this)
         if (savedInstanceState == null) {
             val transaction = supportFragmentManager.beginTransaction()
-            val fragment = RecyclerViewFragment()
+            val fragment = BookListFragment()
             transaction.replace(R.id.frame, fragment)
             transaction.commit()
         }
