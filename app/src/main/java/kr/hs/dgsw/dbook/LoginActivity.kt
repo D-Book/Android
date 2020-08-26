@@ -22,9 +22,11 @@ class LoginActivity : AppCompatActivity() {
                 email = editEmail.text.toString()
                 password = this@LoginActivity.password.text.toString()
             }
-            api.login(loginInfo).enqueue(object : Callback<LoginResponse> {
+            api.login(loginInfo)
+                    .enqueue(object : Callback<LoginResponse> {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Log.d("TEST", "onFailure: " + t.message)
+
                 }
 
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
