@@ -1,7 +1,8 @@
 package kr.hs.dgsw.dbook.model
 
-data class EBookModel(val ebookId: Int, val ebookTitle: String,
-                      val ebookSubTitle: String, val ebookGenre: String,
-                      val ebookAuthor: String, val ebookUploader: String,
-                      val ebookFilePath: String, val ebookPosterPath: String) {
+data class EBookModel(val no: Int, val uploader: Int,
+                      val name: String, val genre: String,
+                      val author: String, val uploadDate: String,
+                      val image: String, val preview: String,
+                        val isSharable: String, val path: String) {
 }

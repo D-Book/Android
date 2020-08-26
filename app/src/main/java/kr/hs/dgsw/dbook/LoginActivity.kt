@@ -1,5 +1,6 @@
 package kr.hs.dgsw.dbook
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -31,6 +32,8 @@ class LoginActivity : AppCompatActivity() {
 
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     Toast.makeText(this@LoginActivity, response.body()?.message, Toast.LENGTH_SHORT).show()
+                    LoginResponse.instance = response.body()
+                    startActivity(Intent(this@LoginActivity,MainActivity::class.java))
                 }
 
             })
