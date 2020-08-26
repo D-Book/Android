@@ -44,7 +44,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/jalnan"
-            android:hint="@string/login_email" />
+            android:hint="@string/login_email"
+            android:textColor="@color/onSurfaceColorHigh" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -55,6 +56,8 @@
         android:layout_marginTop="16dp"
         android:textColorHint="@color/onSurfaceColorDisabled"
         app:boxBackgroundColor="@android:color/white"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/onSurfaceColorMedium"
         app:layout_constraintTop_toBottomOf="@+id/emailId">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -64,7 +67,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/jalnan"
             android:hint="@string/login_password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="@color/onSurfaceColorHigh" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
