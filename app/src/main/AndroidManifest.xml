@@ -20,6 +20,11 @@
         </activity>
         <activity android:name=".bottom_navagation"/>
         <activity android:name=".MainActivity" />
+        <receiver android:name=".receiver.BookDownloadBroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
 
     </application>
 
