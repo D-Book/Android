@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="@string/register_welcome"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/text_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center_horizontal"
+        android:text="가입함으로써 D-Book의 가입에 동의함.\n 서비스 약관 및 개인 정보 보호 정책"
+        android:textColor="@color/terms_text_color"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        tools:layout_editor_absoluteX="75dp" />
+
+    <TextView
+        android:id="@+id/register_advice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="6자리 이상, 대문자 포함, 숫자 포함"
+        app:layout_constraintTop_toBottomOf="@+id/layout_password"
+        tools:layout_editor_absoluteX="40dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="26dp"
+        android:textColorHint="@color/onSurfaceColorDisabled"
+        app:boxBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/jalnan"
+            android:hint="@string/login_email"
+            android:textColor="@color/onSurfaceColorHigh" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="16dp"
+        android:textColorHint="@color/onSurfaceColorDisabled"
+        app:boxBackgroundColor="@android:color/white"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/onSurfaceColorMedium"
+        app:layout_constraintTop_toBottomOf="@+id/emailId">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/jalnan"
+            android:hint="@string/login_password"
+            android:inputType="textPassword"
+            android:textColor="@color/onSurfaceColorHigh" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bg_secondary_rounded_16dp"
+        android:fontFamily="@font/jalnan"
+        android:text="@string/register"
+        android:textColor="@color/onSecondaryColorHigh"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/layout_password"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/layout_password"
+        app:layout_constraintTop_toBottomOf="@+id/layout_password" />
+
+    <TextView
+        android:id="@+id/already_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="이미 계정이 있으신가요? "
+        app:layout_constraintTop_toBottomOf="@+id/text_terms"
+        tools:layout_editor_absoluteX="104dp" />
+
+    <TextView
+        android:id="@+id/already_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="로그인"
+        android:textColor="@color/already_login_color"
+
+        app:layout_constraintTop_toBottomOf="@+id/text_terms"
+        tools:layout_editor_absoluteX="265dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

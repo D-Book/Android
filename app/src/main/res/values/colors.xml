@@ -25,4 +25,7 @@
     <color name="rippleColor">#A0FFFFFF</color>
 
     <color name="header_divider_color">#33000000</color>
+
+    <color name="terms_text_color">#c7c7cc</color>
+    <color name="already_login_color">#4cd964</color>
 </resources>
