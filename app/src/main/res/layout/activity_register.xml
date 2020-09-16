@@ -29,12 +29,13 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/text_terms"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="109dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="109dp"
+        android:layout_marginBottom="92dp"
         android:gravity="center_horizontal"
         android:text="가입함으로써 D-Book의 가입에 동의함.\n 서비스 약관 및 개인 정보 보호 정책"
         android:textColor="@color/terms_text_color"
@@ -58,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_password"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailId"
@@ -78,6 +79,15 @@
             android:fontFamily="@font/jalnan"
             android:hint="@string/login_email"
             android:textColor="@color/onSurfaceColorHigh" />
+
+        <TextView
+            android:id="@+id/checkEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="올바르지 않은 형식입니다"
+            android:textColor="@color/colorRed"/>
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -93,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/emailId">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/Signpassword"
+            android:id="@+id/SignPassword"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,20 +112,29 @@
             android:hint="@string/login_password"
             android:inputType="textPassword"
             android:textColor="@color/onSurfaceColorHigh" />
+
+        <TextView
+            android:id="@+id/checkPWText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="올바르지 않은 형식입니다"
+            android:textColor="@color/colorRed"/>
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_signUp"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="76dp"
         android:background="@drawable/bg_secondary_rounded_16dp"
         android:fontFamily="@font/jalnan"
         android:text="@string/register"
         android:textColor="@color/onSecondaryColorHigh"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/layout_password"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/layout_password"
         app:layout_constraintTop_toBottomOf="@+id/layout_password" />
 
@@ -123,28 +142,27 @@
         android:id="@+id/already_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="312dp"
-        android:layout_marginBottom="92dp"
         android:text="이미 계정이 있으신가요? "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_terms"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
+    <TextView
+        android:id="@+id/backToLogin"
+        android:layout_width="47dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="30dp"
         android:text="로그인"
         android:textColor="@color/already_login_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.737"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/already_account"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signUp"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        intent_SignUp.setOnClickListener{
+        intent_signUp.setOnClickListener{
             val nextIntent = Intent(this, SignUpActivity::class.java)
             startActivity(nextIntent)
         }
