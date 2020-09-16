@@ -18,6 +18,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignUp.SignUpActivity"/>
         <activity android:name=".bottom_navagation"/>
         <activity android:name=".MainActivity" />
         <receiver android:name=".receiver.BookDownloadBroadCastReceiver">

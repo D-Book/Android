@@ -1,5 +1,6 @@
 package kr.hs.dgsw.dbook.network
 
+import android.util.Log
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import kr.hs.dgsw.dbook.model.LoginResponse
 import okhttp3.Interceptor
@@ -14,7 +15,7 @@ class ApiManager {
 
         fun getInstance(): DbookApi {
             val retrofitBuilder = Retrofit.Builder()
-                    .baseUrl("http://10.80.162.210:8080/")
+                    .baseUrl("http://192.168.10.174/")
                     .addConverterFactory(GsonConverterFactory.create())
 
             val interceptor = Interceptor() {
@@ -22,6 +23,7 @@ class ApiManager {
                 val newRequest: Request
                 if (token != null && !token.equals("")) { // 토큰이 없는 경우
                     // Authorization 헤더에 토큰 추가
+
                     newRequest = it.request().newBuilder().addHeader("Token", token).build()
                 } else newRequest = it.request()
                 it.proceed(newRequest)
