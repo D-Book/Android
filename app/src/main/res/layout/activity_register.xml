@@ -35,7 +35,7 @@
         android:layout_marginStart="109dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="109dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="152dp"
         android:gravity="center_horizontal"
         android:text="가입함으로써 D-Book의 가입에 동의함.\n 서비스 약관 및 개인 정보 보호 정책"
         android:textColor="@color/terms_text_color"
@@ -145,24 +145,23 @@
         android:text="이미 계정이 있으신가요? "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.346"
+        app:layout_constraintHorizontal_bias="0.393"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.962" />
 
     <TextView
         android:id="@+id/backToLogin"
-        android:layout_width="47dp"
-        android:layout_height="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="141dp"
-        android:layout_marginBottom="30dp"
         android:text="로그인"
         android:textColor="@color/already_login_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/already_account"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signUp"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.962" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

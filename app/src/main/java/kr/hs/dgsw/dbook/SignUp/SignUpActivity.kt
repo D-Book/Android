@@ -6,16 +6,10 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.util.Patterns
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.editEmail
-import kotlinx.android.synthetic.main.activity_login.password
 import kotlinx.android.synthetic.main.activity_register.*
 import kr.hs.dgsw.dbook.LoginActivity
 import kr.hs.dgsw.dbook.R
-import kr.hs.dgsw.dbook.model.LoginRequest
-import kr.hs.dgsw.dbook.model.LoginResponse
 import kr.hs.dgsw.dbook.network.ApiManager
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +19,8 @@ import java.util.regex.Matcher
 class SignUpActivity : AppCompatActivity(){
     var checkEmail: Boolean = false
     var checkPassword: Boolean = false
-    val api = ApiManager.getInstance()
+
+    private val api = ApiManager.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
