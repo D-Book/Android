@@ -4,27 +4,23 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_signup.*
 import kotlinx.android.synthetic.main.activity_signup.view.*
 import kr.hs.dgsw.dbook.Login.LoginActivity
 import kr.hs.dgsw.dbook.R
-import kr.hs.dgsw.dbook.SignUp.Network.SignUpBody
-import kr.hs.dgsw.dbook.SignUp.Network.SignUpResponse
-import kr.hs.dgsw.dbook.network.ApiManager
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.util.regex.Matcher
 
-class SignUpActivity : AppCompatActivity(){
-    var email : String = ""
-    var password : String = ""
+
+
+class SignUpActivity : AppCompatActivity() {
+    var email: String = ""
+    var password: String = ""
+    var checkEmail: Boolean = false
+    var checkPassword: Boolean = false
     private val setupRetrofit = SetupRetrofit()
 
-    private val api = ApiManager.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
@@ -33,23 +29,23 @@ class SignUpActivity : AppCompatActivity(){
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                //checkEmail()
+                checkEmail()
             }
 
             override fun afterTextChanged(s: Editable) {
-               // checkEmail()
+                checkEmail()
             }
         })
-        SignPassword.addTextChangedListener(object : TextWatcher {
+        SignPassWord.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-               // checkPassword()
+                checkPassword()
             }
 
             override fun afterTextChanged(s: Editable) {
-               // checkPassword()
+                checkPassword()
             }
         })
         backToLogin.setOnClickListener {
@@ -59,8 +55,7 @@ class SignUpActivity : AppCompatActivity(){
         btn_signUp.setOnClickListener {
             email = layout_password.text.toString()
             password = layout_password.text.toString()
-            setupRetrofit.setupRetrofit(email,password,application, this)
-        }
+            setupRetrofit.setupRetrofit(email, password, application, this)
         }
     }
 
@@ -75,27 +70,26 @@ class SignUpActivity : AppCompatActivity(){
         return returnValue
     }
 
-   /* private fun checkButton(checkEmail: Boolean, checkPassword: Boolean){
+    private fun checkButton(checkEmail: Boolean, checkPassword: Boolean) {
 
         this.checkEmail = checkEmail
         this.checkPassword = checkPassword
 
-        Log.d("data1", "data: $checkEmail")
-        Log.d("data1", "data: $checkPassword")
 
-        if(checkEmail && checkPassword){
+        if (checkEmail && checkPassword) {
 
             btn_signUp.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
             btn_signUp.isEnabled = true
 
-        }else{
+        } else {
 
             btn_signUp.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
             btn_signUp.isEnabled = false
 
         }
     }
-    private fun checkEmail(){
+
+    private fun checkEmail() {
         if (isEmail(SignEmail.text.toString())) {
             Thread {
                 runOnUiThread {
@@ -117,9 +111,9 @@ class SignUpActivity : AppCompatActivity(){
         }
     }
 
-    private fun checkPassword(){
+    private fun checkPassword() {
         val regExp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,20}$".toRegex()
-        if (SignPassword.text.toString().isNotEmpty() && SignPassword.text.toString().matches(regExp)) {
+        if (SignPassWord.text.toString().isNotEmpty() && SignPassWord.text.toString().matches(regExp)) {
             Thread {
                 runOnUiThread {
                     checkPWText.text = "올바른 비밀번호 형식입니다."
@@ -129,7 +123,7 @@ class SignUpActivity : AppCompatActivity(){
                 }
             }.start()
         } else {
-            Thread{
+            Thread {
                 runOnUiThread {
                     checkPWText.text = "올바르지 않은 비밀번호 형식입니다."
                     checkPWText.setTextColor(getColorStateList(R.color.colorRed))
@@ -139,6 +133,7 @@ class SignUpActivity : AppCompatActivity(){
             }.start()
         }
     }
-}*/
+}
+
 
 
