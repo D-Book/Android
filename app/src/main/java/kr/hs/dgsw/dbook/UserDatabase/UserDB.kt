@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "UserInformation")
 class UserDB{
     @PrimaryKey
-    var Email: String? = null
+    var email: String? = null
 
-    var profile_image: String? = null
-    var library_image : String? = null
-    var library_name : String? = null
+    var profileImage: String? = null
+    var libraryImage : String? = null
+    var libraryName : String? = null
 }

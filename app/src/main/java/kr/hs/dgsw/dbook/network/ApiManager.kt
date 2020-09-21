@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiManager {
-
+    private var loginInterface: DbookApi? = null
     companion object {
 
         fun getInstance(): DbookApi {
@@ -39,6 +39,9 @@ class ApiManager {
             val retrofit = retrofitBuilder.build();
             return retrofit.create(DbookApi::class.java)
         }
+    }
+    fun requestService(): DbookApi?{
+        return loginInterface
     }
 
 }

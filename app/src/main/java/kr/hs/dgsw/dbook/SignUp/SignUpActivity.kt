@@ -7,8 +7,8 @@ import android.text.TextWatcher
 import android.util.Log
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_register.*
-import kr.hs.dgsw.dbook.LoginActivity
+import kotlinx.android.synthetic.main.activity_signup.*
+import kr.hs.dgsw.dbook.Login.LoginActivity
 import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.network.ApiManager
 import retrofit2.Call
@@ -23,7 +23,7 @@ class SignUpActivity : AppCompatActivity(){
     private val api = ApiManager.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_signup)
         SignEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
