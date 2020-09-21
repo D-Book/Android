@@ -1,4 +1,4 @@
-package kr.hs.dgsw.dbook.SignUp
+package kr.hs.dgsw.dbook.SignUp.Network
 
 data class SignUpBody(
         var email: String = "",

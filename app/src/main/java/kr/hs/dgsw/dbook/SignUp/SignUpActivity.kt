@@ -8,8 +8,11 @@ import android.util.Log
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_signup.*
+import kotlinx.android.synthetic.main.activity_signup.view.*
 import kr.hs.dgsw.dbook.Login.LoginActivity
 import kr.hs.dgsw.dbook.R
+import kr.hs.dgsw.dbook.SignUp.Network.SignUpBody
+import kr.hs.dgsw.dbook.SignUp.Network.SignUpResponse
 import kr.hs.dgsw.dbook.network.ApiManager
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,8 +20,9 @@ import retrofit2.Response
 import java.util.regex.Matcher
 
 class SignUpActivity : AppCompatActivity(){
-    var checkEmail: Boolean = false
-    var checkPassword: Boolean = false
+    var email : String = ""
+    var password : String = ""
+    private val setupRetrofit = SetupRetrofit()
 
     private val api = ApiManager.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,11 +33,11 @@ class SignUpActivity : AppCompatActivity(){
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                checkEmail()
+                //checkEmail()
             }
 
             override fun afterTextChanged(s: Editable) {
-                checkEmail()
+               // checkEmail()
             }
         })
         SignPassword.addTextChangedListener(object : TextWatcher {
@@ -41,40 +45,26 @@ class SignUpActivity : AppCompatActivity(){
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                checkPassword()
+               // checkPassword()
             }
 
             override fun afterTextChanged(s: Editable) {
-                checkPassword()
+               // checkPassword()
             }
         })
         backToLogin.setOnClickListener {
             val nextIntent = Intent(this, LoginActivity::class.java)
             startActivity(nextIntent)
         }
-        btn_signUp.setOnClickListener{
-            val SignupInfor = SignUpBody().apply {
-                email = SignEmail.text.toString()
-                password = this@SignUpActivity.SignPassword.text.toString()
-            }
-            api.SignUp(SignupInfor)
-                    .enqueue(object : Callback<SignUpResponse> {
-                        override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                            Log.d("TEST", "onFailure: " )
-
-                        }
-
-                        override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
-                            Log.d("Email","data: ${response.body()}")
-                            if (response.code() == 400){
-
-                            }
-                        }
-
-                    })
+        btn_signUp.setOnClickListener {
+            email = layout_password.text.toString()
+            password = layout_password.text.toString()
+            setupRetrofit.setupRetrofit(email,password,application, this)
         }
-
+        }
     }
+
+
     private fun isEmail(email: String): Boolean {
         var returnValue = false
         val pattern = Patterns.EMAIL_ADDRESS
@@ -85,7 +75,7 @@ class SignUpActivity : AppCompatActivity(){
         return returnValue
     }
 
-    private fun checkButton(checkEmail: Boolean, checkPassword: Boolean){
+   /* private fun checkButton(checkEmail: Boolean, checkPassword: Boolean){
 
         this.checkEmail = checkEmail
         this.checkPassword = checkPassword
@@ -149,6 +139,6 @@ class SignUpActivity : AppCompatActivity(){
             }.start()
         }
     }
-}
+}*/
 
 

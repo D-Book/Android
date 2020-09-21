@@ -1,7 +1,7 @@
 package kr.hs.dgsw.dbook.network
 
-import kr.hs.dgsw.dbook.SignUp.SignUpBody
-import kr.hs.dgsw.dbook.SignUp.SignUpResponse
+import kr.hs.dgsw.dbook.SignUp.Network.SignUpBody
+import kr.hs.dgsw.dbook.SignUp.Network.SignUpResponse
 import kr.hs.dgsw.dbook.model.LoginRequest
 import kr.hs.dgsw.dbook.model.LoginResponse
 import kr.hs.dgsw.dbook.model.libraryResponse
