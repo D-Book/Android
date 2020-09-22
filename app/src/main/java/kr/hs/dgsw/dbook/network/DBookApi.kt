@@ -19,5 +19,5 @@ interface DBookApi {
 
     ):Call<libraryResponse>
     @POST("/users/activity_signup")
-    fun SignUp(@Body SignUpInfo : SignUpBody):Call<SignUpResponse>
+    fun signUp(@Body SignUpInfo : SignUpBody):Call<SignUpResponse>
 }

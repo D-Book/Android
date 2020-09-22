@@ -40,7 +40,7 @@ class SetupRetrofit {
             (getApplication as DBookApplication).retrofit.create(DBookApi::class.java)
         Log.d("serverT","serverT")
         //signUp 서비스 결과 값
-        signUpService.SignUp(SignUpBody(email, password))
+        signUpService.signUp(SignUpBody(email, password))
             .enqueue(object : Callback<SignUpResponse> {
                 val signUpDialog = SignDialog()
 
