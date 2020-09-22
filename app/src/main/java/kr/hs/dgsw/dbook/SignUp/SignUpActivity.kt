@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_signup.*
@@ -67,10 +68,11 @@ class SignUpActivity : AppCompatActivity() {
         }
         //회원가입하기 버튼을 누르면 처리해주는 함수
         btn_signUp.setOnClickListener {
+            Log.d("serverTest","servertest")
             //입력받은 이메일을 문자열로 바꿔준다
-            email = layout_password.text.toString()
+            email = layout_password?.text.toString()
             //입력받은 password 를 문자열로 바꿔준다
-            password = layout_password.text.toString()
+            password = layout_password?.text.toString()
             //setupRetrofit 함수로 값을 전달해서 회원가입을 처리한다
             setupRetrofit.setupRetrofit(email, password, application, this)
         }

@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.util.Log
 import cn.pedant.SweetAlert.SweetAlertDialog
 import kr.hs.dgsw.dbook.Applacation.DBookApplication
 import kr.hs.dgsw.dbook.SignUp.Network.SignUpBody
@@ -37,33 +38,32 @@ class SetupRetrofit {
         //signUp 서비스
         val signUpService =
             (getApplication as DBookApplication).retrofit.create(DBookApi::class.java)
-
+        Log.d("serverT","serverT")
         //signUp 서비스 결과 값
         signUpService.SignUp(SignUpBody(email, password))
             .enqueue(object : Callback<SignUpResponse> {
                 val signUpDialog = SignDialog()
 
-                override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                    signUpDialog.connectionFail(context, sweetAlertDialog)
-                }
-
                 override fun onResponse(
                     call: Call<SignUpResponse>,
                     response: Response<SignUpResponse>
                 ) {
+                    Log.d("servers","servers")
                     val intent = Intent(context, SignUpActivity::class.java)
 
                     signUpDialog.connectionSuccess(
-                        response.code(),
-                        response.message(),
-                        context,
-                        response.errorBody()?.string().toString(),
-                        intent,
-                        sweetAlertDialog
-                    )
-
-                }
+                            response.code(),
+                            context,
+                            response.errorBody()?.string().toString(),
+                            intent,
+                            sweetAlertDialog
+                    )}
+                    override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
+                        Log.d("serverf","serverf")
+                        signUpDialog.connectionFail(context, sweetAlertDialog)
+                    }
 
             })
+
     }
 }

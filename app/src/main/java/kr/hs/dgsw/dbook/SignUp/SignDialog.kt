@@ -15,22 +15,20 @@ class SignDialog{
 
     internal fun connectionSuccess(
             responseCode: Int,
-            responseMsg: String,
             context: Context,
             responseBody: String,
             intent: Intent,
             sweetAlertDialog: SweetAlertDialog
     ) {
-        //통신 성공
+        //로그인 성공
         when (responseCode) {
-            201 -> {
+            200 -> {
                 sweetAlertDialog.dismiss()
-
                 val dialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
 
                 dialog.setCancelable(false)
 
-                dialog.setTitleText("회원가입이 완료 되었습니다")
+                dialog.setTitleText("로그인 성공")
                         .setConfirmClickListener {
                             ContextCompat.startActivity(context, intent, null)
                             (context as Activity).finish()
@@ -39,14 +37,14 @@ class SignDialog{
                         .show()
 
             }
-        //서버와 통신했지만 값을 잘못보냈을때
+            //로그인 실패
             400 -> {
                 sweetAlertDialog.dismiss()
                 val dialog = SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE)
 
                 dialog.setCancelable(false)
 
-                dialog.setTitleText("서버 통신에 실패하였습니다.")
+                dialog.setTitleText("로그인에 실패했습니다")
                         .setConfirmClickListener {
                             dialog.dismiss()
                         }
@@ -58,7 +56,7 @@ class SignDialog{
             }
         }
     }
-    //서버와 아예 연결이 되지 않았을 때
+    //서버 통신 실패
     fun connectionFail(context: Context, sweetAlertDialog: SweetAlertDialog) {
 
         sweetAlertDialog.dismiss()
