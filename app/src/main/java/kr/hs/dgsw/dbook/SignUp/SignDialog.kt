@@ -6,7 +6,11 @@ import android.content.Intent
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import cn.pedant.SweetAlert.SweetAlertDialog
-
+/*
+* - 엑티비티: 회원가입 Dialog 엑티비티
+* - 담당자: 한승재
+* - 수정 날짜: 2020.09.22
+*/
 class SignDialog{
 
     internal fun connectionSuccess(
@@ -35,7 +39,7 @@ class SignDialog{
                         .show()
 
             }
-
+        //서버와 통신했지만 값을 잘못보냈을때
             400 -> {
                 sweetAlertDialog.dismiss()
                 val dialog = SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE)
@@ -54,7 +58,7 @@ class SignDialog{
             }
         }
     }
-
+    //서버와 아예 연결이 되지 않았을 때
     fun connectionFail(context: Context, sweetAlertDialog: SweetAlertDialog) {
 
         sweetAlertDialog.dismiss()

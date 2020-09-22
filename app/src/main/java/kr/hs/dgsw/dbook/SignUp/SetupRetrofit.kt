@@ -8,10 +8,15 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import kr.hs.dgsw.dbook.Applacation.DBookApplication
 import kr.hs.dgsw.dbook.SignUp.Network.SignUpBody
 import kr.hs.dgsw.dbook.SignUp.Network.SignUpResponse
-import kr.hs.dgsw.dbook.network.DbookApi
+import kr.hs.dgsw.dbook.network.DBookApi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+/*
+* - 엑티비티: SetupRetrofit 엑티비티
+* - 담당자: 한승재
+* - 수정 날짜: 2020.09.22
+*/
 class SetupRetrofit {
     //네트워크 작업
     internal fun setupRetrofit(
@@ -31,7 +36,7 @@ class SetupRetrofit {
 
         //signUp 서비스
         val signUpService =
-            (getApplication as DBookApplication).retrofit.create(DbookApi::class.java)
+            (getApplication as DBookApplication).retrofit.create(DBookApi::class.java)
 
         //signUp 서비스 결과 값
         signUpService.SignUp(SignUpBody(email, password))

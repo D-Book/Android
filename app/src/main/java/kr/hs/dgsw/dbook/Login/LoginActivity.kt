@@ -9,7 +9,11 @@ import kr.hs.dgsw.dbook.SignUp.SignUpActivity
 import kr.hs.dgsw.dbook.model.LoginRequest
 import kr.hs.dgsw.dbook.network.ApiManager
 
-
+/*
+* - 엑티비티: 로그인 엑티비티(이메일, 비밀번호)
+* - 담당자: 한승재
+* - 수정 날짜: 2020.09.22
+*/
 
 class LoginActivity : AppCompatActivity() {
     private val getLogin = kr.hs.dgsw.dbook.Login.GetLogin()

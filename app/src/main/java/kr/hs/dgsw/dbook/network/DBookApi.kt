@@ -10,7 +10,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface DbookApi {
+interface DBookApi {
     @POST("/auth/login")
     fun login(@Body loginInfo: LoginRequest):Call<LoginResponse>
 

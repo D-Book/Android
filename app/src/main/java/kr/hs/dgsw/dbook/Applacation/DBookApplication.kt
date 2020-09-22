@@ -4,13 +4,13 @@ import android.app.Application
 import com.facebook.stetho.Stetho
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import kr.hs.dgsw.dbook.WorkingNetwork.BaseUrl
-import kr.hs.dgsw.dbook.network.DbookApi
+import kr.hs.dgsw.dbook.network.DBookApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class DBookApplication : Application(){
-    private var loginInterface: DbookApi? = null
+    private var loginInterface: DBookApi? = null
     lateinit var retrofit: Retrofit
     private var baseUrl : BaseUrl = BaseUrl()
 
@@ -27,9 +27,9 @@ class DBookApplication : Application(){
             .addConverterFactory(GsonConverterFactory.create())
              .client(client)
             .build()
-        loginInterface = retrofit.create(DbookApi::class.java)
+        loginInterface = retrofit.create(DBookApi::class.java)
     }
-    fun requestService(): DbookApi?{
+    fun requestService(): DBookApi?{
         return loginInterface
     }
 }

@@ -42,7 +42,7 @@ class GetLogin{
                             response: Response<LoginResponse>
 
                     ) {
-                        //다음 화면으로 이동
+
                         val intent = Intent(context, MainActivity::class.java)
                         //Dialog 창 로그인 시도시 결과에 따라 다른 dialog 가 뜬다
                         loginDialog.connectionSuccess(
@@ -70,7 +70,7 @@ class GetLogin{
                     //서버와 연결 실패
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                         Log.d("s", "s")
-                        //LoginDialog를 호출하여 서버와의 연결 실패를 dialog로 띄운다
+                        //LoginDialog 를 호출하여 서버와의 연결 실패를 dialog 로 띄운다
                         loginDialog.connectionFail(context, sweetAlertDialog)
                     }
 

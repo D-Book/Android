@@ -10,10 +10,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiManager {
-    private var loginInterface: DbookApi? = null
+    private var loginInterface: DBookApi? = null
     companion object {
 
-        fun getInstance(): DbookApi {
+        fun getInstance(): DBookApi {
             val retrofitBuilder = Retrofit.Builder()
                     .baseUrl("http://192.168.10.174/")
                     .addConverterFactory(GsonConverterFactory.create())
@@ -37,11 +37,7 @@ class ApiManager {
 
 
             val retrofit = retrofitBuilder.build();
-            return retrofit.create(DbookApi::class.java)
+            return retrofit.create(DBookApi::class.java)
         }
     }
-    fun requestService(): DbookApi?{
-        return loginInterface
-    }
-
 }
