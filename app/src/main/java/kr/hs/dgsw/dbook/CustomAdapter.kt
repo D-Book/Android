@@ -28,7 +28,6 @@ class CustomAdapter(private val dataSet: Array<String>) :
         RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     class ViewHolder(v: View, BookTitle: View) : RecyclerView.ViewHolder(v) {
-
     }
 
     // Create new views (invoked by the layout manager)
@@ -36,15 +35,14 @@ class CustomAdapter(private val dataSet: Array<String>) :
         // Create a new view.
         val bookCover = LayoutInflater.from(viewGroup.context)
                 .inflate(R.layout.item_book_list, viewGroup, false)
-        val BookTitle = LayoutInflater.from(viewGroup.context)
+        val bookTitle = LayoutInflater.from(viewGroup.context)
                 .inflate(R.layout.item_book_list, viewGroup, false)
 
-        return ViewHolder(bookCover,BookTitle)
+        return ViewHolder(bookCover,bookTitle)
     }
 
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-
     }
 
     // Return the size of your dataset (invoked by the layout manager)

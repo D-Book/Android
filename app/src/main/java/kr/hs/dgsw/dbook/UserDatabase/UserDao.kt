@@ -14,6 +14,6 @@ interface UserDao {
     @Query("DELETE FROM UserInformation")
     fun deleteAll()
 
-    @Query("SELECT * from UserInformation ORDER BY Email ASC")
+    @Query("SELECT * from UserInformation ORDER BY email ASC")
     fun getAlphabetizedWords(): LiveData<List<UserDB?>?>?
 }

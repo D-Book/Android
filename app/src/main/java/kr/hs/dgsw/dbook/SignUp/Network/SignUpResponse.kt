@@ -1,6 +1,4 @@
-package kr.hs.dgsw.dbook.SignUp
-
-import kr.hs.dgsw.dbook.model.LoginResponse
+package kr.hs.dgsw.dbook.SignUp.Network
 
 class SignUpResponse(
         var message: String?,
