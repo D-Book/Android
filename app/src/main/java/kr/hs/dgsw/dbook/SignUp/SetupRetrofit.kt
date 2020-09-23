@@ -38,7 +38,6 @@ class SetupRetrofit {
         //signUp 서비스
         val signUpService =
             (getApplication as DBookApplication).retrofit.create(DBookApi::class.java)
-        Log.d("serverT","serverT")
         //signUp 서비스 결과 값
         signUpService.signUp(SignUpBody(email, password))
             .enqueue(object : Callback<SignUpResponse> {
@@ -59,7 +58,6 @@ class SetupRetrofit {
                             sweetAlertDialog
                     )}
                     override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                        Log.d("serverf","serverf")
                         signUpDialog.connectionFail(context, sweetAlertDialog)
                     }
 
