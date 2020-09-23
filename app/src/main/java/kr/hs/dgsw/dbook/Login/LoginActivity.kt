@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 //사용자의 이메일을 email 변수에 담아준다
                 email = this@LoginActivity.editEmail.text.toString()
                 //입력받은 비밀번호를 password 변수에 담아준다
-                password = layout_password?.text.toString()
+             //   password = layout_password?.text.toString()
                 getLogin.getLogin(email, password, application, this@LoginActivity)
         }
 

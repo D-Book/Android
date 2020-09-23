@@ -1,5 +1,6 @@
 package kr.hs.dgsw.dbook.SignUp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -36,7 +37,7 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        SignEmail.addTextChangedListener(object : TextWatcher {
+        Sign_email.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
 
@@ -49,7 +50,7 @@ class SignUpActivity : AppCompatActivity() {
             }
         })
 
-        SignPassWord.addTextChangedListener(object : TextWatcher {
+        passwordId.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
 
@@ -62,17 +63,16 @@ class SignUpActivity : AppCompatActivity() {
             }
         })
         //로그인하기 text 를 누를시 LoginActivity 로 되돌아감
-        backToLogin.setOnClickListener {
+        back_to_login.setOnClickListener {
             val nextIntent = Intent(this, LoginActivity::class.java)
             startActivity(nextIntent)
         }
         //회원가입하기 버튼을 누르면 처리해주는 함수
         btn_signUp.setOnClickListener {
-            Log.d("serverTest","servertest")
             //입력받은 이메일을 문자열로 바꿔준다
-            email = layout_password?.text.toString()
+            email = Sign_email?.text.toString()
             //입력받은 password 를 문자열로 바꿔준다
-            password = layout_password?.text.toString()
+            password = passwordId?.text.toString()
             //setupRetrofit 함수로 값을 전달해서 회원가입을 처리한다
             setupRetrofit.setupRetrofit(email, password, application, this)
         }
@@ -109,47 +109,32 @@ class SignUpActivity : AppCompatActivity() {
     }
     //입력받은 이메일 형식에 따라 레이아웃에 결과를 띄어주는 함수
     private fun checkEmail() {
-        if (isEmail(SignEmail.text.toString())) {
-            Thread {
-                runOnUiThread {
-                    checkEmailText.text = "올바른 이메일 형식입니다."
-                    checkEmailText.setTextColor(getColorStateList(R.color.colorBlue))
+        if (isEmail(Sign_email.text.toString())) {
+
+                    emailId.endIconDrawable = getDrawable(R.drawable.ic_register_correct)
                     checkEmail = true
                     checkButton(checkEmail, checkPassword)
-                }
-            }.start()
+
         } else {
-            Thread {
-                runOnUiThread {
-                    checkEmailText.text = "올바르지 않은 이메일 형식입니다."
-                    checkEmailText.setTextColor(getColorStateList(R.color.colorRed))
+                    emailId.endIconDrawable = getDrawable(R.drawable.ic_register_failed)
                     checkEmail = false
                     checkButton(checkEmail, checkPassword)
-                }
-            }.start()
         }
     }
     //입력받은 PassWord 가 형식에 맞는지 판단 해주는 함수
+    @SuppressLint("ResourceType")
     private fun checkPassword() {
         val regExp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,20}$".toRegex()
-        if (SignPassWord.text.toString().isNotEmpty() && SignPassWord.text.toString().matches(regExp)) {
-            Thread {
-                runOnUiThread {
-                    checkPWText.text = "올바른 비밀번호 형식입니다."
-                    checkPWText.setTextColor(getColorStateList(R.color.colorBlue))
+        if (passwordId.text.toString().isNotEmpty() && passwordId.text.toString().matches(regExp)) {
+
+                    layout_password.endIconDrawable = getDrawable(R.drawable.ic_register_correct)
                     checkPassword = true
                     checkButton(checkEmail, checkPassword)
-                }
-            }.start()
+
         } else {
-            Thread {
-                runOnUiThread {
-                    checkPWText.text = "올바르지 않은 비밀번호 형식입니다."
-                    checkPWText.setTextColor(getColorStateList(R.color.colorRed))
+                    layout_password.endIconDrawable = getDrawable(R.drawable.ic_register_failed)
                     checkPassword = false
                     checkButton(checkEmail, checkPassword)
-                }
-            }.start()
         }
     }
 }
