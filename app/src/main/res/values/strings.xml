@@ -13,6 +13,8 @@
 
     <string name="register_welcome">처음오셨군요!</string>
     <string name="register">D-Book 시작하기</string>
+    <string name="already_register"><font color="#A0000000">이미 계정이 있으신가요?</font><font color="#4cd964">로그인</font></string>
+    <string name="register_terms">가입함으로써 D-Book의 가입에 동의함.\n <u>서비스 약관</u> 및 <u>개인 정보 보호 정책</u> </string>
 
     <string name="book_detail_explain">책 소개</string>
     <string name="book_detail_explain_sample">『소설 보다: 여름 2019』(문학과지성사)가 출간됐다. [소설 보다]는 문학과지성사가 분기마다 ‘이 계절의 소설’을 선정, 홈페이지에 그 결과를 공개하고 이를 계절마다 엮어 1년에 4권씩 출간하는 단행본 시리즈로 2018년에 시작되었다.</string>

@@ -24,6 +24,7 @@
         android:layout_marginTop="26dp"
         android:text="@string/register_welcome"
         android:textSize="30sp"
+        android:textColor="@color/onSurfaceColorMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -33,17 +34,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="109dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="109dp"
         android:gravity="center_horizontal"
-        android:text="가입함으로써 D-Book의 가입에 동의함.\n 서비스 약관 및 개인 정보 보호 정책"
+        android:text="@string/register_terms"
         android:textColor="@color/terms_text_color"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_signUp" />
 
     <TextView
         android:id="@+id/register_advice"
@@ -53,6 +51,7 @@
         android:layout_marginTop="4dp"
         android:layout_marginEnd="214dp"
         android:text="6자리 이상, 대문자 포함, 숫자 포함"
+        android:textColor="@color/onSurfaceColorMedium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -67,6 +66,9 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="26dp"
         android:textColorHint="@color/onSurfaceColorDisabled"
+        app:endIconDrawable="@drawable/ic_register_failed"
+        app:endIconMode="custom"
+        app:endIconTint="#ff0000"
         app:boxBackgroundColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -88,8 +90,9 @@
         android:layout_marginTop="16dp"
         android:textColorHint="@color/onSurfaceColorDisabled"
         app:boxBackgroundColor="@android:color/white"
-        app:endIconMode="password_toggle"
-        app:endIconTint="@color/onSurfaceColorMedium"
+        app:endIconDrawable="@drawable/ic_register_failed"
+        app:endIconMode="custom"
+        app:endIconTint="#ff0000"
         app:layout_constraintTop_toBottomOf="@+id/emailId">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -133,18 +136,15 @@
         app:layout_constraintTop_toBottomOf="@+id/text_terms"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button3"
+    <TextView
+        android:id="@+id/already_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:text="로그인"
-        android:textColor="@color/already_login_color"
+        android:layout_marginBottom="16dp"
+        android:text="@string/already_register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.737"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
