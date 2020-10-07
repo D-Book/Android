@@ -5,4 +5,7 @@ data class EBookModel(val no: Int, val uploader: Int,
                       val author: String, val uploadDate: String,
                       val image: String, val preview: String,
                         val isSharable: String, val path: String) {
+    companion object{
+        var instance: EBookModel? = null
+    }
 }

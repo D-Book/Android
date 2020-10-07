@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Login.LoginActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".SignUp.SignUpActivity"/>
         <activity android:name=".bottom_navagation"/>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Login.LoginActivity" />
         <receiver android:name=".receiver.BookDownloadBroadCastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
