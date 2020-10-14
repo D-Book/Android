@@ -156,7 +156,7 @@
                 android:layout_weight="1"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="@integer/span_count"
-                tools:listitem="@layout/item_book_list"/>
+                tools:listitem="@layout/item_book_list_2"/>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>

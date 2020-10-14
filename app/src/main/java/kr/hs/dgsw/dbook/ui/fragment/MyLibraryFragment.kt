@@ -13,7 +13,7 @@ class MyLibraryFragment : Fragment(R.layout.fragment_my_library) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mAdapter = MyAdapter(requireContext(), BookList)
-       val DRV : RecyclerView = view.findViewById(R.id.downloadRecycler)
+        val DRV : RecyclerView = view.findViewById(R.id.downloadRecycler)
         DRV.adapter = mAdapter
     }
 }
