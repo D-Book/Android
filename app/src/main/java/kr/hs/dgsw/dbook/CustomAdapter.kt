@@ -41,12 +41,12 @@ class CustomAdapter(private val dataSet: Array<String>) :
         fun bind (Book: EBookModel, context: Context) {
             if (Book.image != "") {
                 val resourceId = context.resources.getIdentifier(Book.image, "drawable", context.packageName)
-                BookCover?.setImageResource(resourceId)
+               // BookCover?.setImageResource(resourceId)
             } else {
-                BookCover?.setImageResource(R.mipmap.ic_launcher)
+                //BookCover?.setImageResource(R.mipmap.ic_launcher)
             }
-            hisName?.text = Person.name
-            hisAge?.text = Person.age
+         //   hisName?.text = Person.name
+         //   hisAge?.text = Person.age
         }
     }
 

@@ -68,7 +68,7 @@
         android:textColorHint="@color/onSurfaceColorDisabled"
         app:endIconDrawable="@drawable/ic_register_failed"
         app:endIconMode="custom"
-        app:endIconTint="#ff0000"
+        app:endIconTint="@null"
         app:boxBackgroundColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
@@ -92,7 +92,7 @@
         app:boxBackgroundColor="@android:color/white"
         app:endIconDrawable="@drawable/ic_register_failed"
         app:endIconMode="custom"
-        app:endIconTint="#ff0000"
+        app:endIconTint="@null"
         app:layout_constraintTop_toBottomOf="@+id/emailId">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -141,7 +141,7 @@
         android:textColor="#4cd964"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/already_register"
         app:layout_constraintVertical_bias="0.0" />

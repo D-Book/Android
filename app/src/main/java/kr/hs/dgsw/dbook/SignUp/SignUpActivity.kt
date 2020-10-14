@@ -36,6 +36,8 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
+        btn_signUp.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
+        btn_signUp.isEnabled = false
 
         Sign_email.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
@@ -73,8 +75,7 @@ class SignUpActivity : AppCompatActivity() {
             email = Sign_email?.text.toString()
             //입력받은 password 를 문자열로 바꿔준다
             password = passwordId?.text.toString()
-            //setupRetrofit 함수로 값을 전달해서 회원가입을 처리한다
-            setupRetrofit.setupRetrofit(email, password, application, this)
+
         }
     }
 
@@ -96,15 +97,13 @@ class SignUpActivity : AppCompatActivity() {
 
         //입력한 password 와 email 이 조건에 맞을시 회원가입 버튼 활성화
         if (checkEmail && checkPassword) {
-
             btn_signUp.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
             btn_signUp.isEnabled = true
         //입력한 password 와 email 이 조건에 맞지 않을시 회원가입 버튼 비활성화
-        } else {
-
+        }
+        else {
             btn_signUp.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
             btn_signUp.isEnabled = false
-
         }
     }
     //입력받은 이메일 형식에 따라 레이아웃에 결과를 띄어주는 함수
@@ -112,11 +111,13 @@ class SignUpActivity : AppCompatActivity() {
         if (isEmail(Sign_email.text.toString())) {
 
                     emailId.endIconDrawable = getDrawable(R.drawable.ic_register_correct)
+                    emailId.isActivated = true
                     checkEmail = true
                     checkButton(checkEmail, checkPassword)
 
         } else {
                     emailId.endIconDrawable = getDrawable(R.drawable.ic_register_failed)
+                    emailId.isActivated = false
                     checkEmail = false
                     checkButton(checkEmail, checkPassword)
         }

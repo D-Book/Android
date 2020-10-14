@@ -3,13 +3,9 @@ package kr.hs.dgsw.dbook
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.fragment_book_list.view.*
-import kr.hs.dgsw.dbook.model.EBookModel
 import kr.hs.dgsw.dbook.model.libraryResponse
 import kr.hs.dgsw.dbook.network.ApiManager
 import kr.hs.dgsw.dbook.ui.fragment.BookListFragment
@@ -28,9 +24,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setContentView(R.layout.activity_bottom_navagation)
         // val view = findViewById<RecyclerView>(R.layout.fragment_book_list,savedInstanceState)
         val lm = LinearLayoutManager(applicationContext)
-        view.book_list_recyclerview.adapter = CustomAdapter(databaseList())
-        view.book_list_recyclerview.setHasFixedSize(true)
-        view.book_list_recyclerview.layoutManager = lm
+        //view.book_list_recyclerview.adapter = CustomAdapter(databaseList())
+       // view.book_list_recyclerview.setHasFixedSize(true)
+       // view.book_list_recyclerview.layoutManager = lm
+        intent?.data?.asMultipart("test",contentResolver)
         fm = supportFragmentManager
         val bnw = findViewById<BottomNavigationView>(R.id.nav_view)
         bnw.setOnNavigationItemSelectedListener(this)
