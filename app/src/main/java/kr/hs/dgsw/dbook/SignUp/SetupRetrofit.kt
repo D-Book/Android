@@ -23,6 +23,7 @@ class SetupRetrofit {
     internal fun setupRetrofit(
         email: String,
         password: String,
+        base64: String,
         getApplication: Application,
         context: Context
     ) {

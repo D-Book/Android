@@ -75,6 +75,8 @@ class SignUpActivity : AppCompatActivity() {
             email = Sign_email?.text.toString()
             //입력받은 password 를 문자열로 바꿔준다
             password = passwordId?.text.toString()
+            val nextIntent = Intent(this,SignUpNameActivity::class.java)
+            startActivity(nextIntent)
 
         }
     }

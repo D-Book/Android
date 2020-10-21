@@ -40,6 +40,8 @@ open class SignUpNameActivity : AppCompatActivity() {
 
     //서버 통신을 할때 필요한 클래스
     private val setupRetrofit = SetupRetrofit() //retrofit setup
+    private val rotateImageClass = RotateImage()
+    private val base64Encoding = Base64Encoding()
 
     //onCreate
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,7 +77,7 @@ open class SignUpNameActivity : AppCompatActivity() {
 
         //sign_up 버튼을 누르면 모든 값을 서버로 전송
         btn_start_dbook.setOnClickListener {
-            setupRetrofit.setupRetrofit(email, password)
+            setupRetrofit.setupRetrofit(email, password,base64, application, this)
         }
 
         //이름이 null 인지 아닌지 판단
@@ -145,23 +147,23 @@ open class SignUpNameActivity : AppCompatActivity() {
                 var bm: Bitmap = BitmapFactory.decodeStream(inputStream) //비트맵 변환
                 inputStream?.close()
 
-            //    bm = rotateImageClass.rotateImage(data.data!!, bm, contentResolver) //이미지 회전
+                bm = rotateImageClass.rotateImage(data.data!!, bm, contentResolver) //이미지 회전
 
                 //이미지 resize
                 bm = bitmapResizePrc(bm, 180, 180)
 
                 //화면에 이미지 표시
-               /* Glide.with(this)
+                Glide.with(this)
                     .load(bm)
                     .thumbnail(Glide.with(applicationContext).load(R.raw.loading))
                     .override(1000)
                     .transform(CenterCrop(), RoundedCorners(1000000000))
-                    .into(user_image)*/
+                    .into(profile_image)
 
                 base64 = "" //base64 초기화
 
                 //base64 인코딩
-            //    base64 = base64Encoding.encoding(imageNameFormat, bm, applicationContext)
+                base64 = base64Encoding.encoding(imageNameFormat, bm, applicationContext)
 
             } catch (e: Exception) {
                 e.printStackTrace()
