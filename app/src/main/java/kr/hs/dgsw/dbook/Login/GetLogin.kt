@@ -16,13 +16,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class GetLogin{
+class GetLogin {
     internal fun getLogin(
             email: String,
             password: String,
             getApplication: Application,
             context: Context
-    ){
+    ) {
         val api = ApiManager.getInstance()
         val sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE)
         sweetAlertDialog.progressHelper.barColor = Color.parseColor("#0DE930")
@@ -66,6 +66,7 @@ class GetLogin{
                         }
 
                     }
+
                     //서버와 연결 실패
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                         Log.d("s", "s")
@@ -76,5 +77,5 @@ class GetLogin{
 
                 })
     }
-    }
+}
 
