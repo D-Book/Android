@@ -17,11 +17,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.junhyuk.daedo.R
-import com.junhyuk.daedo.signUp.base64.Base64Encoding
-import com.junhyuk.daedo.signUp.rotateImage.RotateImage
-import com.junhyuk.daedo.workingNetwork.sha512.Sha512
-import com.junhyuk.daedo.signUp.workingRetrofit.SetupRetrofit
 import kotlinx.android.synthetic.main.activity_sign_up_name.*
 import kr.hs.dgsw.dbook.R
 import java.lang.Boolean
@@ -61,7 +56,7 @@ open class SignUpNameActivity : AppCompatActivity() {
         password = intent.extras?.getString("userInfoPassword").toString() //password 저장
 
         //갤러리에서 프로필 사진 가져오기
-        user_image.setOnClickListener {
+        profile_image.setOnClickListener {
 
             val imageIntent = Intent() //구글 갤러리 접근 intent 변수
 
@@ -73,14 +68,14 @@ open class SignUpNameActivity : AppCompatActivity() {
         }
 
         //뒤로 가기 버튼 눌렀을 때
-        back_button_sign_up.setOnClickListener {
+        back_sign_up.setOnClickListener {
             //뒤로 돌아감
             onBackPressed()
         }
 
         //sign_up 버튼을 누르면 모든 값을 서버로 전송
-        sign_up_button.setOnClickListener {
-            setupRetrofit.setupRetrofit(email, password, userName, base64, application, this)
+        btn_start_dbook.setOnClickListener {
+            setupRetrofit.setupRetrofit(email, password)
         }
 
         //이름이 null 인지 아닌지 판단
@@ -102,15 +97,12 @@ open class SignUpNameActivity : AppCompatActivity() {
     //이름이 입력 될 때 마다 호출되는 함수(이름 형식 검사)
     private fun checkNameMsg() {
         if (input_name.text.toString().isNotBlank()) {
-            check_name_text.text = "올바른 이름입니다."
-            check_name_text.setTextColor(getColorStateList(R.color.colorBlue))
-            sign_up_button.setBackgroundResource(R.drawable.login_button)
-            sign_up_button.isEnabled = true
+                        btn_start_dbook.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
+            btn_start_dbook.isEnabled = true
         } else {
-            check_name_text.text = "올바르지 않은 이름입니다."
-            check_name_text.setTextColor(getColorStateList(R.color.colorRed))
-            sign_up_button.setBackgroundResource(R.drawable.login_button_false)
-            sign_up_button.isEnabled = false
+
+            btn_start_dbook.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
+            btn_start_dbook.isEnabled = false
         }
     }
 
@@ -153,23 +145,23 @@ open class SignUpNameActivity : AppCompatActivity() {
                 var bm: Bitmap = BitmapFactory.decodeStream(inputStream) //비트맵 변환
                 inputStream?.close()
 
-                bm = rotateImageClass.rotateImage(data.data!!, bm, contentResolver) //이미지 회전
+            //    bm = rotateImageClass.rotateImage(data.data!!, bm, contentResolver) //이미지 회전
 
                 //이미지 resize
                 bm = bitmapResizePrc(bm, 180, 180)
 
                 //화면에 이미지 표시
-                Glide.with(this)
+               /* Glide.with(this)
                     .load(bm)
                     .thumbnail(Glide.with(applicationContext).load(R.raw.loading))
                     .override(1000)
                     .transform(CenterCrop(), RoundedCorners(1000000000))
-                    .into(user_image)
+                    .into(user_image)*/
 
                 base64 = "" //base64 초기화
 
                 //base64 인코딩
-                base64 = base64Encoding.encoding(imageNameFormat, bm, applicationContext)
+            //    base64 = base64Encoding.encoding(imageNameFormat, bm, applicationContext)
 
             } catch (e: Exception) {
                 e.printStackTrace()
