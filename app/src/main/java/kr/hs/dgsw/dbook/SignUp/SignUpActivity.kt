@@ -5,11 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.util.Patterns
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_signup.*
-import kotlinx.android.synthetic.main.activity_signup.view.*
 import kr.hs.dgsw.dbook.Login.LoginActivity
 import kr.hs.dgsw.dbook.R
 import java.util.regex.Matcher

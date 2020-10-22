@@ -39,29 +39,28 @@ open class SignUpNameActivity : AppCompatActivity() {
     private var base64: String = ""
 
     //서버 통신을 할때 필요한 클래스
+    private val base64Encoding = Base64Encoding() //Base64 인코딩
     private val setupRetrofit = SetupRetrofit() //retrofit setup
-    private val rotateImageClass = RotateImage()
-    private val base64Encoding = Base64Encoding()
+    private val rotateImageClass = RotateImage() //이미지 회전
+
 
     //onCreate
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_name)
-
         //엑션바 숨기기
         val actionBar = supportActionBar
         actionBar?.hide()
-
         //intent 데이터
         val intent: Intent = intent //이메일 비밀번호 인텐트 데이터
         email = intent.extras?.getString("userInfoEmail").toString() //이메일 저장
         password = intent.extras?.getString("userInfoPassword").toString() //password 저장
+        //sha256 암호화
+
 
         //갤러리에서 프로필 사진 가져오기
         profile_image.setOnClickListener {
-
             val imageIntent = Intent() //구글 갤러리 접근 intent 변수
-
             //구글 갤러리 접근
             imageIntent.type = "image/*"
             imageIntent.action = Intent.ACTION_GET_CONTENT
@@ -77,7 +76,7 @@ open class SignUpNameActivity : AppCompatActivity() {
 
         //sign_up 버튼을 누르면 모든 값을 서버로 전송
         btn_start_dbook.setOnClickListener {
-            setupRetrofit.setupRetrofit(email, password,base64, application, this)
+            setupRetrofit.setupRetrofit(email, password, base64, userName, application, this)
         }
 
         //이름이 null 인지 아닌지 판단
@@ -85,28 +84,19 @@ open class SignUpNameActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 userName = input_name.text.toString()
-                checkNameMsg()
+
             }
 
             override fun afterTextChanged(s: Editable) {
                 userName = input_name.text.toString()
-                checkNameMsg()
+
             }
         })
 
     }
 
     //이름이 입력 될 때 마다 호출되는 함수(이름 형식 검사)
-    private fun checkNameMsg() {
-        if (input_name.text.toString().isNotBlank()) {
-                        btn_start_dbook.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
-            btn_start_dbook.isEnabled = true
-        } else {
 
-            btn_start_dbook.setBackgroundResource(R.drawable.bg_secondary_rounded_16dp)
-            btn_start_dbook.isEnabled = false
-        }
-    }
 
     //갤러리에서 넘어온 이미지 처리
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

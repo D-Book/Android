@@ -24,6 +24,7 @@ class SetupRetrofit {
         email: String,
         password: String,
         base64: String,
+        username : String,
         getApplication: Application,
         context: Context
     ) {
