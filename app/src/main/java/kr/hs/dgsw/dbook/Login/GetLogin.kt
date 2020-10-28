@@ -11,19 +11,18 @@ import kr.hs.dgsw.dbook.Dialog.LoginDialog
 import kr.hs.dgsw.dbook.MainActivity
 import kr.hs.dgsw.dbook.model.LoginRequest
 import kr.hs.dgsw.dbook.model.LoginResponse
-import kr.hs.dgsw.dbook.network.ApiManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class GetLogin{
+class GetLogin {
     internal fun getLogin(
             email: String,
             password: String,
             getApplication: Application,
             context: Context
-    ){
-        val api = ApiManager.getInstance()
+    ) {
+        //dialog
         val sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE)
         sweetAlertDialog.progressHelper.barColor = Color.parseColor("#0DE930")
         sweetAlertDialog
@@ -31,11 +30,10 @@ class GetLogin{
                 .setCancelable(false)
         sweetAlertDialog.show()
 
-        (getApplication as DBookApplication)
+        val api = (getApplication as DBookApplication)
                 .requestService()
-        api.login(LoginRequest(email, password))
-
-                .enqueue(object : Callback<LoginResponse> {
+        api?.login(LoginRequest(email, password))
+                ?.enqueue(object : Callback<LoginResponse> {
                     val loginDialog = LoginDialog()
                     override fun onResponse(
                             call: Call<LoginResponse>,
@@ -66,6 +64,7 @@ class GetLogin{
                         }
 
                     }
+
                     //서버와 연결 실패
                     override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                         Log.d("s", "s")
@@ -76,5 +75,5 @@ class GetLogin{
 
                 })
     }
-    }
+}
 

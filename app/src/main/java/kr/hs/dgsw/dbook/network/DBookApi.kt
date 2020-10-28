@@ -11,13 +11,14 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface DBookApi {
-    @POST("/auth/login")
-    fun login(@Body loginInfo: LoginRequest):Call<LoginResponse>
+    @POST("/user/login")
+    fun login(@Body loginInfo: LoginRequest
+    ):Call<LoginResponse>
 
     @GET("/library")
     fun getLibrary(
-
     ):Call<libraryResponse>
-    @POST("/users/activity_signup")
+
+    @POST("/user/sign-up")
     fun signUp(@Body SignUpInfo : SignUpBody):Call<SignUpResponse>
 }

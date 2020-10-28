@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kr.hs.dgsw.dbook.model.libraryResponse
-import kr.hs.dgsw.dbook.network.ApiManager
 import kr.hs.dgsw.dbook.ui.fragment.BookListFragment
 import kr.hs.dgsw.dbook.ui.fragment.MyLibraryFragment
 import retrofit2.Call

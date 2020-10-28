@@ -3,11 +3,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_signup.view.*
 import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.SignUp.SignUpActivity
-import kr.hs.dgsw.dbook.model.LoginRequest
-import kr.hs.dgsw.dbook.network.ApiManager
 
 /*
 * - 엑티비티: 로그인 엑티비티(이메일, 비밀번호)
