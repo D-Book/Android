@@ -3,6 +3,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_login.*
+import kr.hs.dgsw.dbook.MainActivity
 import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.SignUp.SignUpActivity
 
@@ -30,10 +31,12 @@ class LoginActivity : AppCompatActivity() {
         }
         btn_login.setOnClickListener {
                 //사용자의 이메일을 email 변수에 담아준다
-                email = this@LoginActivity.editEmail.text.toString()
+            //    email = this@LoginActivity.editEmail.text.toString()
                 //입력받은 비밀번호를 password 변수에 담아준다
              //   password = layout_password?.text.toString()
-                getLogin.getLogin(email, password, application, this@LoginActivity)
+             //   getLogin.getLogin(email, password, application, this@LoginActivity)
+            val nextIntent = Intent(this, MainActivity::class.java)
+            startActivity(nextIntent)
         }
 
     }

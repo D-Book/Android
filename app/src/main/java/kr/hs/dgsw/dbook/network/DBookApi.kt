@@ -2,6 +2,7 @@ package kr.hs.dgsw.dbook.network
 
 import kr.hs.dgsw.dbook.SignUp.Network.SignUpBody
 import kr.hs.dgsw.dbook.SignUp.Network.SignUpResponse
+import kr.hs.dgsw.dbook.model.BookListData
 import kr.hs.dgsw.dbook.model.LoginRequest
 import kr.hs.dgsw.dbook.model.LoginResponse
 import kr.hs.dgsw.dbook.model.libraryResponse
@@ -21,4 +22,9 @@ interface DBookApi {
 
     @POST("/user/sign-up")
     fun signUp(@Body SignUpInfo : SignUpBody):Call<SignUpResponse>
+
+    @GET("/booklist")
+    fun getBookList(
+
+    ):Call<BookListData>
 }

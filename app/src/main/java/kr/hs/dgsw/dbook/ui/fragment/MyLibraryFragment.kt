@@ -9,10 +9,10 @@ import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.model.EBookModel
 
 class MyLibraryFragment : Fragment(R.layout.fragment_my_library) {
-    var BookList = arrayListOf<EBookModel>()
+    var bookList = arrayListOf<EBookModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val mAdapter = MyAdapter(requireContext(), BookList)
+        val mAdapter = MyAdapter(requireContext(), bookList)
         val DRV : RecyclerView = view.findViewById(R.id.downloadRecycler)
         DRV.adapter = mAdapter
     }
