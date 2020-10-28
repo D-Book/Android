@@ -6,9 +6,8 @@ data class BookListData(
         var code: String = "",
         var message: String = "",
         @SerializedName("object")
-        var content: ArrayList<BookData>,
-        var category_name: String = "",
-        var category_id: String = ""
+        var content: ArrayList<BookData>
+
 ){
     companion object
     {
