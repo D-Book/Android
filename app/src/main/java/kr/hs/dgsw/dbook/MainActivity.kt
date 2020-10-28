@@ -1,6 +1,5 @@
 package kr.hs.dgsw.dbook
 
-import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -10,6 +9,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kr.hs.dgsw.dbook.Applacation.DBookApplication
 import kr.hs.dgsw.dbook.model.libraryResponse
 import kr.hs.dgsw.dbook.ui.fragment.BookListFragment
+import kr.hs.dgsw.dbook.ui.fragment.CategoryDetailFragment
+import kr.hs.dgsw.dbook.ui.fragment.EXTRA_CATEGORY_NAME
 import kr.hs.dgsw.dbook.ui.fragment.MyLibraryFragment
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,7 +36,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bnw.setOnNavigationItemSelectedListener(this)
         if (savedInstanceState == null) {
             val transaction = supportFragmentManager.beginTransaction()
-            val fragment = BookListFragment()
+            val fragment = CategoryDetailFragment()
+            fragment.arguments = Bundle().apply{
+                putString(EXTRA_CATEGORY_NAME, "0")
+            }
             transaction.replace(R.id.frame, fragment)
             transaction.commit()
         }
