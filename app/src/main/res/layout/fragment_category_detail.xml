@@ -13,6 +13,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical|start"
