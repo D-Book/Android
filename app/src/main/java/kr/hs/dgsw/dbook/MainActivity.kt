@@ -16,7 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(){
     var fm = supportFragmentManager
 
 
@@ -32,16 +32,12 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
        // view.book_list_recyclerview.layoutManager = lm
         intent?.data?.asMultipart("test",contentResolver)
         fm = supportFragmentManager
-        val bnw = findViewById<BottomNavigationView>(R.id.nav_view)
-        bnw.setOnNavigationItemSelectedListener(this)
         if (savedInstanceState == null) {
             val transaction = supportFragmentManager.beginTransaction()
             val fragment = CategoryDetailFragment()
             fragment.arguments = Bundle().apply{
                 putString(EXTRA_CATEGORY_NAME, "0")
             }
-            transaction.replace(R.id.frame, fragment)
-            transaction.commit()
         }
 
         api.requestService()
@@ -58,11 +54,4 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         })
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.navigation_book_list -> fm.beginTransaction().replace(R.id.frame, BookListFragment()).commit()
-            R.id.navigation_my_library -> fm.beginTransaction().replace(R.id.frame, MyLibraryFragment()).commit()
-        }
-        return true
     }
-}

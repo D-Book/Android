@@ -60,7 +60,7 @@ class GetLogin {
                         }
                         //통신 실패
                         else if (response.code() == 401) {
-
+                            Log.d("d","d")
                         }
 
                     }

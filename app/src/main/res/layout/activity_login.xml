@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/emailId">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
+            android:id="@+id/LoginPasswordId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

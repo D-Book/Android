@@ -25,7 +25,6 @@ class DBookApplication : Application(){
             val newRequest: Request
             if (token != null && !token.equals("")) { // 토큰이 없는 경우
                 // Authorization 헤더에 토큰 추가
-
                 newRequest = it.request().newBuilder().addHeader("Token", token).build()
             } else newRequest = it.request()
             it.proceed(newRequest)

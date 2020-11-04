@@ -28,7 +28,7 @@ class SignDialog{
 
                 dialog.setCancelable(false)
 
-                dialog.setTitleText("로그인 성공")
+                dialog.setTitleText("회원가입 성공")
                         .setConfirmClickListener {
                             ContextCompat.startActivity(context, intent, null)
                             (context as Activity).finish()
@@ -38,13 +38,13 @@ class SignDialog{
 
             }
             //로그인 실패
-            400 -> {
+            412 -> {
                 sweetAlertDialog.dismiss()
                 val dialog = SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE)
 
                 dialog.setCancelable(false)
 
-                dialog.setTitleText("로그인에 실패했습니다")
+                dialog.setTitleText("회원가입에 실패했습니다")
                         .setConfirmClickListener {
                             dialog.dismiss()
                         }
