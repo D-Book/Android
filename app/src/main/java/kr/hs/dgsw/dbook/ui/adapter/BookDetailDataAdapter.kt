@@ -1,6 +1,5 @@
 package kr.hs.dgsw.dbook.ui.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.WorkingNetwork.BaseUrl
 import kr.hs.dgsw.dbook.model.BookDetailData
 
-class BookDetailDataAdapter(context: Context, val BookList: List<BookDetailData>, val grid: Boolean = true) : RecyclerView.Adapter<BookDetailDataAdapter.Holder>() {
+class BookDetailDataAdapter(val BookList: List<BookDetailData>, val grid: Boolean = true, val listener: (String) -> Unit) : RecyclerView.Adapter<BookDetailDataAdapter.Holder>() {
 
     val baseUrl = BaseUrl()
 
@@ -22,7 +21,11 @@ class BookDetailDataAdapter(context: Context, val BookList: List<BookDetailData>
             else -> R.layout.item_book_list
         }
         val view = LayoutInflater.from(parent.context).inflate(layoutId, parent, false)
-        return Holder(view)
+        val holder = Holder(view)
+        view.setOnClickListener {
+            listener.invoke(BookList[holder.adapterPosition].id)
+        }
+        return holder
     }
 
     override fun getItemCount(): Int {
