@@ -12,7 +12,7 @@ interface BookDao {
     fun getAll(): List<BookEntity>
 
     @Query("select * from book where id = :id")
-    fun getBookById(id: String): BookEntity
+    fun getBookById(id: String): BookEntity?
 
     @Query("select isDownloaded from book where id = :id")
     fun isDownloadedBook(id: String): Boolean

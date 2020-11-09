@@ -120,7 +120,7 @@
         android:layout_marginHorizontal="@dimen/margin_24dp"
         android:layout_marginTop="@dimen/margin_8dp"
         android:layout_marginBottom="@dimen/margin_12dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btn_delete"
         app:layout_constraintTop_toBottomOf="@+id/txt_s_explain">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -135,7 +135,7 @@
     </ScrollView>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/button"
+        android:id="@+id/btn_delete"
         android:layout_width="75dp"
         android:layout_height="50dp"
         android:layout_marginStart="@dimen/margin_10dp"
@@ -148,7 +148,7 @@
         tools:layout_editor_absoluteX="16dp" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
+        android:id="@+id/btn_download_read"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="@dimen/margin_10dp"
@@ -161,6 +161,6 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/btn_delete"
         tools:layout_editor_absoluteX="107dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

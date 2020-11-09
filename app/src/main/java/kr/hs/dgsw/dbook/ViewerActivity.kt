@@ -51,7 +51,7 @@ class ViewerActivity : AppCompatActivity(), EpubManager.Listener {
 
     fun setEpubManager() {
         CoroutineScope(Dispatchers.IO).launch {
-            bookDao.getBookById(bookId!!).let {
+            bookDao.getBookById(bookId!!)?.let {
                 launch(Dispatchers.Main) {
                     mSettings = DefaultViewerSettings()
                     val epubDRM = DefaultEpubDRM(it.book_file)
