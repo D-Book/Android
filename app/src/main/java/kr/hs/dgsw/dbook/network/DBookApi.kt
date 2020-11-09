@@ -23,7 +23,7 @@ interface DBookApi {
     @POST("/user/sign-up")
     fun signUp(@Body SignUpInfo : SignUpBody):Call<SignUpResponse>
 
-    @GET("/booklist")
+    @GET("/ebook/list")
     fun getBookList(
 
     ):Call<BookListData>

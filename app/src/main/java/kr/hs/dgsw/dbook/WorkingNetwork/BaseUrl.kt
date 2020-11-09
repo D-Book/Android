@@ -1,7 +1,7 @@
 package kr.hs.dgsw.dbook.WorkingNetwork
 
 data class BaseUrl(
-        val BaseURL: String = "http://192.168.0.139:3000/"
+        val BaseURL: String = "http://192.168.25.28:3000/"
 ) {
     fun resolve(path: String): String {
         return BaseURL + when (path.startsWith("/")) {

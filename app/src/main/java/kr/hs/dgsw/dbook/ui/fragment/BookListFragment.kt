@@ -22,14 +22,17 @@ class BookListFragment : Fragment(), OnChangeFragmentListener {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null) {
             childFragmentManager.beginTransaction()
-                    .add(R.id.fcv, BookDetailFragment())
+                    .add(R.id.fcv, CategoryListFragment())
                     .commit()
         }
     }
-
     override fun changeToBookDetail(bookId: String) {
         childFragmentManager.beginTransaction()
-                .replace(R.id.fcv, BookDetailFragment())
+                .replace(R.id.fcv, BookDetailFragment().apply {
+                    arguments = Bundle().apply {
+                        putString(EXTRA_BOOK_ID, bookId)
+                    }
+                })
                 .addToBackStack(null)
                 .commit()
     }

@@ -11,11 +11,20 @@ import kr.hs.dgsw.dbook.ViewerActivity
 import kr.hs.dgsw.dbook.download.DoDownload
 import kr.hs.dgsw.dbook.model.BookDetailData
 
+const val EXTRA_BOOK_ID = "book_name"
+
 class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
     val doDownload = DoDownload()
-
+    var bookId : String? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            bookId = it.getString(EXTRA_BOOK_ID)
+        }
     }
 }
