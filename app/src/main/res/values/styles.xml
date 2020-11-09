@@ -13,6 +13,11 @@
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
+    <style name="ViewerTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorAccent">@color/primaryTextColor</item>
+    </style>
+
     <style name="DefaultTextViewStyle" parent="Widget.MaterialComponents.TextView">
         <item name="android:fontFamily">@font/jalnan</item>
         <item name="android:textColor">@color/onSurfaceColorHigh</item>

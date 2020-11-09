@@ -22,7 +22,7 @@ class BookListFragment : Fragment(), OnChangeFragmentListener {
         super.onViewCreated(view, savedInstanceState)
         if (savedInstanceState == null) {
             childFragmentManager.beginTransaction()
-                    .add(R.id.fcv, CategoryListFragment())
+                    .add(R.id.fcv, BookDetailFragment())
                     .commit()
         }
     }

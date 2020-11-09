@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="expandHorizontal" format="boolean" />
+    <attr name="expandVertical" format="boolean" />
+    <attr name="minimumWidth" format="dimension" />
+    <attr name="minimumHeight" format="dimension" />
+
+    <declare-styleable name="ExpandLayout">
+        <attr name="android:duration" />
+        <attr name="expandHorizontal" />
+        <attr name="expandVertical" />
+        <attr name="minimumWidth" />
+        <attr name="minimumHeight" />
+    </declare-styleable>
+
+</resources>

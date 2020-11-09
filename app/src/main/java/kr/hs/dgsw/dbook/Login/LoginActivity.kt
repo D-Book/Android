@@ -36,7 +36,6 @@ class LoginActivity : AppCompatActivity() {
                 //입력받은 비밀번호를 password 변수에 담아준다
                 password = this@LoginActivity.LoginPasswordId.text.toString()
                 getLogin.getLogin(email, password, application, this@LoginActivity)
-
         }
 
     }

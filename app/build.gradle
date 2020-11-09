@@ -68,4 +68,6 @@ dependencies {
 
     implementation "androidx.room:room-rxjava2:$room_version"
     implementation 'com.github.f0ris.sweetalert:library:1.5.6'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1'
 }

@@ -38,7 +38,7 @@ class BookDetailDataAdapter(val BookList: List<BookDetailData>, val grid: Boolea
 
         fun bind(book: BookDetailData) {
             Glide.with(itemView)
-                    .load(baseUrl.BaseURL.let { it.substring(0, it.length - 1) } + book.cover_image)
+                    .load(baseUrl.resolve(book.cover_image))
                     .into(bookCover)
             bookTitle.text = book.title
         }
