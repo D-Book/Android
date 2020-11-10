@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.room.Room
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_book_detail.*
+import kotlinx.android.synthetic.main.fragment_book_detail.txt_category
+import kotlinx.android.synthetic.main.fragment_category_detail.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -58,8 +60,10 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        back_book_btn.setOnClickListener {
+            parentFragmentManager.popBackStack() }
         BookListData.instance?.content?.forEach {
-            var category = it
+            val category = it
             it.data.forEach {
                 if (it.id.equals(bookId)) {
                     book = it
@@ -104,7 +108,10 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
                         })
                     }
                 }
+
             }
         }
+
     }
+
 }
