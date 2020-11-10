@@ -19,7 +19,7 @@ class MyLibraryFragment : Fragment() {
         val DRV: RecyclerView = view.findViewById(R.id.downloadRecycler)
         DRV.adapter = mAdapter
         //                Glide.with(context)
-//                    .load(profile.image_urls[i+1])
+//                    .load(profile.image_urls)
 //                    .into(userProfile2)
         return view
 
