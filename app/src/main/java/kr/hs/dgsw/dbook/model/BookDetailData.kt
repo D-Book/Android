@@ -12,5 +12,7 @@ data class BookDetailData(
         var publisher : String = "",
         var published : String =  ""
 ){
-
+    companion object {
+        var instance: BookDetailData? = null
+    }
 }

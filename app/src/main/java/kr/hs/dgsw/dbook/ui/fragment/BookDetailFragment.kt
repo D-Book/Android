@@ -6,12 +6,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.room.Room
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_book_detail.*
 import kotlinx.android.synthetic.main.fragment_book_detail.txt_category
+import kotlinx.android.synthetic.main.fragment_book_detail.view.*
 import kotlinx.android.synthetic.main.fragment_category_detail.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -24,6 +26,7 @@ import kr.hs.dgsw.dbook.local.DBookDatabase
 import kr.hs.dgsw.dbook.local.dao.BookDao
 import kr.hs.dgsw.dbook.model.BookDetailData
 import kr.hs.dgsw.dbook.model.BookListData
+import java.util.Calendar.getInstance
 
 const val EXTRA_BOOK_ID = "book_name"
 
@@ -62,6 +65,12 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
         super.onViewCreated(view, savedInstanceState)
         back_book_btn.setOnClickListener {
             parentFragmentManager.popBackStack() }
+        btn_delete.setOnClickListener {
+            val deleteBook = DeleteBook(requireContext())
+            deleteBook.start()
+        }
+       //txt_publisher.text = BookDetailData.instance!!.publisher
+        //Log.e("pub","pub: ${BookDetailData.instance!!.publisher}")
         BookListData.instance?.content?.forEach {
             val category = it
             it.data.forEach {
@@ -114,4 +123,12 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
     }
 
+}
+class DeleteBook(val context: Context) : Thread() {
+    override fun run() {
+        /*DBookDatabase
+                .getDatabase(context)!!
+                .bookDao()
+                .delete()*/
+    }
 }
