@@ -11,6 +11,8 @@ import kr.hs.dgsw.dbook.Dialog.LoginDialog
 import kr.hs.dgsw.dbook.MainActivity
 import kr.hs.dgsw.dbook.model.LoginRequest
 import kr.hs.dgsw.dbook.model.LoginResponse
+import kr.hs.dgsw.dbook.model.ObjectData
+import kr.hs.dgsw.dbook.model.UserData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,7 +34,7 @@ class GetLogin {
 
         val api = (getApplication as DBookApplication)
                 .requestService()
-        api?.login(LoginRequest(email, password))
+        api?.login(UserData(email,password))
                 ?.enqueue(object : Callback<LoginResponse> {
                     val loginDialog = LoginDialog()
                     override fun onResponse(
@@ -53,8 +55,6 @@ class GetLogin {
 
                         //통신성공
                         if (response.code() == 200) {
-
-                            //서버로부터 받은 정보들을 EmailLoginBody 변수에 담아준다
                             LoginResponse.instance = response.body()
 
                         }

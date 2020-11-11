@@ -26,6 +26,8 @@ import kr.hs.dgsw.dbook.local.DBookDatabase
 import kr.hs.dgsw.dbook.local.dao.BookDao
 import kr.hs.dgsw.dbook.model.BookDetailData
 import kr.hs.dgsw.dbook.model.BookListData
+import kr.hs.dgsw.dbook.ui.module.FeedTime
+import org.w3c.dom.Comment
 import java.util.Calendar.getInstance
 
 const val EXTRA_BOOK_ID = "book_name"
@@ -63,6 +65,7 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val feedPostTime = FeedTime()
         back_book_btn.setOnClickListener {
             parentFragmentManager.popBackStack() }
         btn_delete.setOnClickListener {
@@ -85,7 +88,8 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
             txt_author.text = author
             txt_explain.text = description
             txt_publisher.text = publisher
-            txt_date.text = published
+
+           // txt_date.text = feedPostTime.calFeedTime(publisher)
             Glide.with(this@BookDetailFragment)
                     .load(baseUrl.resolve(cover_image))
                     .into(img_cover)
