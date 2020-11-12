@@ -55,8 +55,6 @@ open class SignUpNameActivity : AppCompatActivity() {
         val intent: Intent = intent //이메일 비밀번호 인텐트 데이터
         email = intent.extras?.getString("userInfoEmail").toString() //이메일 저장
         password = intent.extras?.getString("userInfoPassword").toString() //password 저장
-        //sha256 암호화
-
 
         //갤러리에서 프로필 사진 가져오기
         profile_image.setOnClickListener {
@@ -65,7 +63,6 @@ open class SignUpNameActivity : AppCompatActivity() {
             imageIntent.type = "image/*"
             imageIntent.action = Intent.ACTION_GET_CONTENT
             startActivityForResult(imageIntent, 101)
-
         }
 
         //뒤로 가기 버튼 눌렀을 때
