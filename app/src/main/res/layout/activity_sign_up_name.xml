@@ -33,22 +33,25 @@
             android:maxLines="1"
             android:ems="10"
             android:hint="이름"
-            android:textColor="@color/onSurfaceColorHigh" />
+            android:textColor="@color/onSurfaceColorHigh"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageButton
         android:id="@+id/profile_image"
-        android:layout_width="114dp"
-        android:layout_height="118dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        android:background="@drawable/userprofile"
+        android:background="@drawable/profidle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.29"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintHeight_percent="0.13"/>
 
     <ImageButton
         android:id="@+id/back_sign_up"
@@ -66,8 +69,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start_dbook"
-        android:layout_width="346dp"
-        android:layout_height="65dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="29dp"
         android:layout_marginBottom="300dp"
@@ -81,6 +84,8 @@
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profile_image"
-        app:layout_constraintVertical_bias="0.957" />
+        app:layout_constraintVertical_bias="0.957"
+        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintHeight_percent="0.07"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
