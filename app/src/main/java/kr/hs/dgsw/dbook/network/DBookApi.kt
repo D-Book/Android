@@ -1,8 +1,8 @@
 package kr.hs.dgsw.dbook.network
 
-import kr.hs.dgsw.dbook.SignUp.Network.SignUpBody
 import kr.hs.dgsw.dbook.SignUp.Network.SignUpResponse
 import kr.hs.dgsw.dbook.model.*
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -18,7 +18,7 @@ interface DBookApi {
     ):Call<libraryResponse>
 
     @POST("/user/sign-up")
-    fun signUp(@Body SignUpInfo : SignUpBody):Call<SignUpResponse>
+    fun signUp(@Body SignUpInfo : RequestBody):Call<SignUpResponse>
 
     @GET("/ebook/list")
     fun getBookList(

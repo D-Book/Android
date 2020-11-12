@@ -10,25 +10,28 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailId"
         android:layout_width="110pt"
-        android:layout_height="30pt"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginBottom="38dp"
+        android:layout_marginBottom="67dp"
         android:background="@drawable/edit_text_rounded"
         android:textColorHint="@color/onSurfaceColorDisabled"
         app:boxBackgroundColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/btn_start_dbook"
-        app:layout_constraintEnd_toEndOf="@+id/btn_start_dbook"
-        app:layout_constraintStart_toStartOf="@+id/btn_start_dbook">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/edit_text_rounded"
+            android:background="@android:color/transparent"
             android:fontFamily="@font/jalnan"
             android:gravity="center"
+            android:maxLines="1"
+            android:ems="10"
             android:hint="이름"
             android:textColor="@color/onSurfaceColorHigh" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -38,19 +41,28 @@
         android:layout_width="114dp"
         android:layout_height="118dp"
         android:layout_gravity="center"
-        android:background="@drawable/profile"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="156dp" />
+        android:background="@drawable/userprofile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:id="@+id/back_sign_up"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/ic_arrow_back_24"
-        app:layout_constraintHeight_percent="0.057"
-        app:layout_constraintWidth_percent="0.057"
-        tools:layout_editor_absoluteX="82dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.037"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.017"
+        app:layout_constraintWidth_percent="0.057" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_start_dbook"
@@ -66,6 +78,9 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profile_image"
+        app:layout_constraintVertical_bias="0.957" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
