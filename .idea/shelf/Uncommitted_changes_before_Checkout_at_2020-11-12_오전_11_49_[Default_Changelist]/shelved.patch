@@ -1,0 +1,79 @@
+Index: app/src/main/res/layout/item_category_list.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:orientation=\"vertical\">\r\n\r\n    <FrameLayout\r\n        android:id=\"@+id/layout_category\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:paddingHorizontal=\"@dimen/padding_16dp\"\r\n        android:paddingTop=\"@dimen/padding_16dp\">\r\n\r\n        <androidx.appcompat.widget.AppCompatTextView\r\n            android:id=\"@+id/txt_category_name\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:textSize=\"18sp\"\r\n            tools:text=\"소설\" />\r\n\r\n        <androidx.appcompat.widget.AppCompatImageView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"end\"\r\n            app:srcCompat=\"@drawable/ic_arrow_forward_24\" />\r\n    </FrameLayout>\r\n\r\n    <androidx.recyclerview.widget.RecyclerView\r\n        android:id=\"@+id/recycler_view_book_list\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\"\r\n        app:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n        tools:layoutManager=\"androidx.recyclerview.widget.LinearLayoutManager\"\r\n        tools:listitem=\"@layout/item_book_list\"\r\n        tools:orientation=\"horizontal\" />\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/item_category_list.xml	(revision 3531fe3adceb5666593f6d7b4a289e8585754472)
++++ app/src/main/res/layout/item_category_list.xml	(date 1605149364947)
+@@ -24,7 +24,9 @@
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="end"
+-            app:srcCompat="@drawable/ic_arrow_forward_24" />
++
++            app:srcCompat="@drawable/ic_arrow_forward_24"
++            />
+     </FrameLayout>
+ 
+     <androidx.recyclerview.widget.RecyclerView
+Index: app/src/main/res/layout/fragment_my_library.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <androidx.appcompat.widget.AppCompatImageView\r\n        android:id=\"@+id/img_background\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:scaleType=\"centerCrop\"\r\n        tools:src=\"@drawable/bg_my_library_sample\" />\r\n\r\n    <View\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:background=\"#30000000\" />\r\n\r\n    <androidx.coordinatorlayout.widget.CoordinatorLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:fitsSystemWindows=\"true\">\r\n\r\n        <androidx.constraintlayout.widget.ConstraintLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\">\r\n\r\n            <androidx.appcompat.widget.AppCompatImageView\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_margin=\"@dimen/margin_16dp\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\"\r\n                app:srcCompat=\"@drawable/ic_edit_24\" />\r\n\r\n            <com.makeramen.roundedimageview.RoundedImageView\r\n                android:id=\"@+id/img_profile\"\r\n                android:layout_width=\"100dp\"\r\n                android:layout_height=\"100dp\"\r\n                android:layout_marginTop=\"58dp\"\r\n                android:scaleType=\"centerCrop\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toTopOf=\"parent\"\r\n                app:riv_border_color=\"@android:color/white\"\r\n                app:riv_border_width=\"2dp\"\r\n                app:riv_corner_radius=\"50dp\"\r\n                tools:src=\"@drawable/bg_my_library_sample\" />\r\n\r\n            <androidx.appcompat.widget.AppCompatTextView\r\n                android:id=\"@+id/txt_library_name\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"@dimen/margin_8dp\"\r\n                android:textColor=\"@android:color/white\"\r\n                android:textSize=\"15sp\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/img_profile\"\r\n                tools:text=\"누군가의 서재\" />\r\n\r\n            <androidx.appcompat.widget.AppCompatTextView\r\n                android:id=\"@+id/txt_email\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginTop=\"@dimen/margin_4dp\"\r\n                android:textColor=\"@android:color/white\"\r\n                android:textSize=\"12sp\"\r\n                app:layout_constraintEnd_toEndOf=\"parent\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/txt_library_name\"\r\n                tools:text=\"dbook@dgsw.hs.kr\" />\r\n\r\n            <androidx.appcompat.widget.AppCompatTextView\r\n                android:id=\"@+id/txt_s_read_book\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"@dimen/margin_32dp\"\r\n                android:layout_marginTop=\"56dp\"\r\n                android:text=\"@string/read_book\"\r\n                android:textColor=\"@android:color/white\"\r\n                android:textSize=\"14sp\"\r\n                app:layout_constraintStart_toStartOf=\"parent\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/txt_email\" />\r\n\r\n            <androidx.appcompat.widget.AppCompatTextView\r\n                android:id=\"@+id/txt_read_book\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:textColor=\"@android:color/white\"\r\n                android:textSize=\"16sp\"\r\n                app:layout_constraintEnd_toEndOf=\"@+id/txt_s_read_book\"\r\n                app:layout_constraintStart_toStartOf=\"@+id/txt_s_read_book\"\r\n                app:layout_constraintTop_toBottomOf=\"@id/txt_s_read_book\"\r\n                tools:text=\"2권\" />\r\n\r\n\r\n            <androidx.appcompat.widget.AppCompatTextView\r\n                android:id=\"@+id/txt_s_saved_book\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_marginStart=\"@dimen/margin_16dp\"\r\n                android:text=\"@string/saved_book\"\r\n                android:textColor=\"@android:color/white\"\r\n                android:textSize=\"14sp\"\r\n                app:layout_constraintStart_toEndOf=\"@+id/txt_s_read_book\"\r\n                app:layout_constraintTop_toTopOf=\"@+id/txt_s_read_book\" />\r\n\r\n            <androidx.appcompat.widget.AppCompatTextView\r\n                android:id=\"@+id/txt_saved_book\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:textColor=\"@android:color/white\"\r\n                android:textSize=\"16sp\"\r\n                app:layout_constraintEnd_toEndOf=\"@+id/txt_s_saved_book\"\r\n                app:layout_constraintStart_toStartOf=\"@+id/txt_s_saved_book\"\r\n                app:layout_constraintTop_toBottomOf=\"@id/txt_s_saved_book\"\r\n                tools:text=\"1권\" />\r\n\r\n            <View\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"1dp\"\r\n                android:layout_marginHorizontal=\"@dimen/margin_24dp\"\r\n                android:layout_marginTop=\"@dimen/margin_8dp\"\r\n                android:background=\"@android:color/white\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/txt_read_book\" />\r\n        </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:background=\"@drawable/bg_surface_top_rounded\"\r\n            android:orientation=\"vertical\"\r\n            app:behavior_peekHeight=\"@dimen/my_library_peek_height\"\r\n            app:layout_behavior=\"com.google.android.material.bottomsheet.BottomSheetBehavior\">\r\n\r\n            <androidx.appcompat.widget.AppCompatTextView\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"@dimen/header_height\"\r\n                android:gravity=\"center\"\r\n                android:text=\"다운로드한 책\"\r\n                android:textSize=\"17sp\"\r\n                app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n            <View\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"1dp\"\r\n                android:background=\"@color/header_divider_color\"\r\n                app:layout_constraintTop_toBottomOf=\"@+id/layout_header\" />\r\n\r\n            <androidx.recyclerview.widget.RecyclerView\r\n                android:id=\"@+id/downloadRecycler\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"0dp\"\r\n                android:layout_weight=\"1\"\r\n                app:layoutManager=\"androidx.recyclerview.widget.GridLayoutManager\"\r\n                app:spanCount=\"@integer/span_count\"\r\n                tools:listitem=\"@layout/item_book_list_2\"/>\r\n        </LinearLayout>\r\n    </androidx.coordinatorlayout.widget.CoordinatorLayout>\r\n</FrameLayout>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_my_library.xml	(revision 3531fe3adceb5666593f6d7b4a289e8585754472)
++++ app/src/main/res/layout/fragment_my_library.xml	(date 1605148934326)
+@@ -26,13 +26,6 @@
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+ 
+-            <androidx.appcompat.widget.AppCompatImageView
+-                android:layout_width="wrap_content"
+-                android:layout_height="wrap_content"
+-                android:layout_margin="@dimen/margin_16dp"
+-                app:layout_constraintEnd_toEndOf="parent"
+-                app:layout_constraintTop_toTopOf="parent"
+-                app:srcCompat="@drawable/ic_edit_24" />
+ 
+             <com.makeramen.roundedimageview.RoundedImageView
+                 android:id="@+id/img_profile"
+Index: app/src/main/java/kr/hs/dgsw/dbook/WorkingNetwork/BaseUrl.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package kr.hs.dgsw.dbook.WorkingNetwork\r\n\r\ndata class BaseUrl(\r\n        val BaseURL: String = \"http://10.80.163.207:3000/\"\r\n) {\r\n    fun resolve(path: String): String {\r\n        return BaseURL + when (path.startsWith(\"/\")) {\r\n            true -> path.substring(1)\r\n            false -> path\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/kr/hs/dgsw/dbook/WorkingNetwork/BaseUrl.kt	(revision 3531fe3adceb5666593f6d7b4a289e8585754472)
++++ app/src/main/java/kr/hs/dgsw/dbook/WorkingNetwork/BaseUrl.kt	(date 1605076114397)
+@@ -1,7 +1,7 @@
+ package kr.hs.dgsw.dbook.WorkingNetwork
+ 
+ data class BaseUrl(
+-        val BaseURL: String = "http://10.80.163.207:3000/"
++        val BaseURL: String = "http://10.80.163.63:3000/"
+ ) {
+     fun resolve(path: String): String {
+         return BaseURL + when (path.startsWith("/")) {
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nbuildscript {\r\n    ext.kotlin_version = \"1.3.72\"\r\n    repositories {\r\n        google()\r\n        jcenter()\r\n    }\r\n    dependencies {\r\n        classpath 'com.android.tools.build:gradle:4.1.0'\r\n        classpath \"org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version\"\r\n\r\n        // NOTE: Do not place your application dependencies here; they belong\r\n        // in the individual module build.gradle files\r\n    }\r\n}\r\n\r\nallprojects {\r\n    repositories {\r\n        google()\r\n        jcenter()\r\n        mavenCentral()\r\n    }\r\n}\r\n\r\ntask clean(type: Delete) {\r\n    delete rootProject.buildDir\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- build.gradle	(revision 3531fe3adceb5666593f6d7b4a289e8585754472)
++++ build.gradle	(date 1605075957977)
+@@ -6,7 +6,7 @@
+         jcenter()
+     }
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:4.1.0'
++        classpath 'com.android.tools.build:gradle:4.1.1'
+         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+ 
+         // NOTE: Do not place your application dependencies here; they belong

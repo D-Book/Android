@@ -129,21 +129,19 @@
         android:text="@string/already_register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.401"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/back_to_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="로그인"
         android:textColor="#4cd964"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.738"
-        app:layout_constraintStart_toStartOf="parent"
+        android:paddingLeft="5dp"
         app:layout_constraintTop_toTopOf="@+id/already_register"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/already_register"
+        app:layout_constraintStart_toEndOf="@+id/already_register"
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
