@@ -28,6 +28,7 @@ class BookListFragment : Fragment(), OnChangeFragmentListener {
     }
     override fun changeToBookDetail(bookId: String) {
         childFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.anim_fragment,0)
                 .replace(R.id.fcv, BookDetailFragment().apply {
                     arguments = Bundle().apply {
                         putString(EXTRA_BOOK_ID, bookId)
@@ -39,6 +40,7 @@ class BookListFragment : Fragment(), OnChangeFragmentListener {
 
     override fun changeToCategoryDetail(categoryId: String) {
         childFragmentManager.beginTransaction()
+                .setCustomAnimations(R.anim.anim_fragment,0)
                 .replace(R.id.fcv, CategoryDetailFragment().apply {
                     arguments = Bundle().apply {
                         putString(EXTRA_CATEGORY_ID, categoryId)

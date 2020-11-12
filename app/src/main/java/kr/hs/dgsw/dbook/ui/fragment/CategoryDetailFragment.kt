@@ -35,7 +35,10 @@ class CategoryDetailFragment : Fragment(R.layout.fragment_category_detail) {
     }
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn_back.setOnClickListener { parentFragmentManager.popBackStack() }
+        btn_back.setOnClickListener {
+
+            parentFragmentManager.popBackStack()
+        }
         (activity?.application as DBookApplication).requestService()?.getBookList()?.enqueue(object : Callback<BookListData> {
             override fun onFailure(call: Call<BookListData>, t: Throwable) {
 
