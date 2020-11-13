@@ -92,6 +92,7 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
            // txt_date.text = feedPostTime.calFeedTime(publisher)
             Glide.with(this@BookDetailFragment)
                     .load(baseUrl.resolve(cover_image))
+                    .override(460,620)
                     .into(img_cover)
             setButton()
         }
