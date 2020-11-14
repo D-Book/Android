@@ -8,7 +8,10 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_book_detail.*
@@ -33,7 +36,7 @@ import java.util.Calendar.getInstance
 const val EXTRA_BOOK_ID = "book_name"
 
 class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
-
+    private lateinit var callback: OnBackPressedCallback
     val baseUrl = BaseUrl()
     val doDownload = DoDownload()
     var bookId: String? = null
@@ -136,4 +139,5 @@ class DeleteBook(val context: Context) : Thread() {
                 .bookDao()
                 .delete()*/
     }
+
 }
