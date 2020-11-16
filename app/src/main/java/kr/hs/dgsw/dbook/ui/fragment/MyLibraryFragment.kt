@@ -44,8 +44,7 @@ class MyLibraryFragment : Fragment() {
         Log.d("image","image : ${LoginResponse.instance!!.update.user!!.profile_image}")
 
         Glide.with(requireContext())
-                .load(R.drawable.pngegg)
-                .circleCrop()
+                .load(R.drawable.librarybackground)
                 .into(img_background)
         view.txt_library_name.text = "김첨지의 서재"
         view.txt_email.text = LoginResponse.instance!!.email
