@@ -50,7 +50,7 @@ class CategoryDetailFragment : Fragment(R.layout.fragment_category_detail) {
                         for (bookData in it.content) {
                             if (bookData.category_id == categoryId) {
                                 txt_category.text = bookData.category_name
-                                val adapter = BookDetailDataAdapter(bookData.data) {
+                                val adapter = BookDetailDataAdapter(bookData.books) {
                                     onChangeFragmentListener?.changeToBookDetail(it)
                                 }
                                 category.adapter = adapter

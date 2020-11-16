@@ -22,7 +22,7 @@ abstract class DBookDatabase : RoomDatabase() {
                     if (INSTANCE == null) {
                         INSTANCE = Room.databaseBuilder(
                                 context.applicationContext,
-                                DBookDatabase::class.java, "word_database"
+                                DBookDatabase::class.java, "DBookDatabase"
                         )
                                 .fallbackToDestructiveMigration()
                                 .build()

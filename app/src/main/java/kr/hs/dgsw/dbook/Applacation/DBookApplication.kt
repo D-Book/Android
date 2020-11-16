@@ -23,9 +23,10 @@ class DBookApplication : Application(){
         val interceptor = Interceptor() {
             val token = LoginResponse.instance?.token
             val newRequest: Request
-            if (token != null && !token.equals("")) { // 토큰이 없는 경우
+            if (token != null && !token.equals("")) {
                 // Authorization 헤더에 토큰 추가
-                newRequest = it.request().newBuilder().addHeader("Token", token).build()
+                newRequest = it.request().newBuilder().addHeader("Authentication", token).build()
+
             } else newRequest = it.request()
             it.proceed(newRequest)
         }

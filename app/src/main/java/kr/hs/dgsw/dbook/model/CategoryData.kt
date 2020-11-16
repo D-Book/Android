@@ -1,7 +1,7 @@
 package kr.hs.dgsw.dbook.model
 
 data class CategoryData(
-        var data : ArrayList<BookDetailData>,
+        var books : ArrayList<BookDetailData>,
         var category_name: String = "",
         var category_id: String = ""
 ){

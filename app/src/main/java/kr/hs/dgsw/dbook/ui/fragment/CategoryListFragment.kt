@@ -11,7 +11,6 @@ import kr.hs.dgsw.dbook.Applacation.DBookApplication
 import kr.hs.dgsw.dbook.BookList.OnChangeFragmentListener
 import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.model.BookListData
-import kr.hs.dgsw.dbook.model.BookListResponse
 import kr.hs.dgsw.dbook.ui.adapter.CategoryListAdapter
 import retrofit2.Call
 import retrofit2.Callback

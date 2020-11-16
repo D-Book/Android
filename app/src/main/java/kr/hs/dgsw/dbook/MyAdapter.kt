@@ -28,7 +28,6 @@ class MyAdapter (context: Context, val BookList: List<EBookModel>): RecyclerView
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var bookCover : ImageView = itemView.findViewById(R.id.img_cover)
 
-
         var bookTitle : TextView = itemView.findViewById(R.id.txt_title)
 
         fun bind (book: EBookModel) {
