@@ -6,18 +6,13 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_book_detail.*
-import kotlinx.android.synthetic.main.fragment_book_detail.txt_category
-import kotlinx.android.synthetic.main.fragment_book_detail.view.*
-import kotlinx.android.synthetic.main.fragment_category_detail.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,8 +25,6 @@ import kr.hs.dgsw.dbook.local.dao.BookDao
 import kr.hs.dgsw.dbook.model.BookDetailData
 import kr.hs.dgsw.dbook.model.BookListData
 import kr.hs.dgsw.dbook.ui.module.FeedTime
-import org.w3c.dom.Comment
-import java.util.Calendar.getInstance
 
 const val EXTRA_BOOK_ID = "book_name"
 
@@ -87,15 +80,16 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
             }
         }
         book?.run {
+            val str = published
+            val result = str.substring(0,10)
             txt_title.text = title
             txt_author.text = author
             txt_explain.text = description
             txt_publisher.text = publisher
-
-           // txt_date.text = feedPostTime.calFeedTime(publisher)
+            txt_date.text = result
             Glide.with(this@BookDetailFragment)
                     .load(baseUrl.resolve(cover_image))
-                    .override(460,620)
+                    .override(460, 620)
                     .into(img_cover)
             setButton()
         }

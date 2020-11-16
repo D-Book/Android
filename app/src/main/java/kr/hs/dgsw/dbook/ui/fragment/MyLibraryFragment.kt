@@ -33,7 +33,7 @@ class MyLibraryFragment : Fragment() {
                 .into(img_background)
 
         Glide.with(requireContext())
-                .load("http://192.168.0.29:3000/profile/windows.png")
+                .load(R.drawable.pngegg)
                 .circleCrop()
                 .into(img_profile)
         view.txt_library_name.text = "김첨지의 서재"
