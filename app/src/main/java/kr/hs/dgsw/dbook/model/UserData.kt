@@ -4,7 +4,7 @@ data class UserData(
         var email : String = "",
         var password : String = "",
         var id : String = "",
-        var profileImage : String = "",
+        var profileImage : String? = "",
         var name : String = ""
 
 ){
