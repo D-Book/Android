@@ -25,8 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
 
-            app:srcCompat="@drawable/ic_arrow_forward_24"
-            />
+            app:srcCompat="@drawable/ic_arrow_forward_24" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView

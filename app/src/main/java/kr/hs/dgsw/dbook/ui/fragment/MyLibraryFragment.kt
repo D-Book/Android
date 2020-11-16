@@ -38,10 +38,9 @@ class MyLibraryFragment : Fragment() {
                 .into(img_profile)
         view.txt_library_name.text = "김첨지의 서재"
         view.txt_email.text = LoginResponse.instance!!.email
-        val getBook = GetBook(requireContext())
+        val getBook  = GetBook(requireContext())
         getBook.start()
      //   view.txt_s_saved_book.text =
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):

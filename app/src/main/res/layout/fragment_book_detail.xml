@@ -10,7 +10,8 @@
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/header_height"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/back_book_btn"
@@ -28,6 +29,15 @@
             android:textColor="@color/primaryTextColor"
             android:textSize="20sp"
             tools:text="소설" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/add_mybook_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_mask" />
+
     </FrameLayout>
 
     <View
@@ -164,4 +174,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_delete"
         tools:layout_editor_absoluteX="107dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

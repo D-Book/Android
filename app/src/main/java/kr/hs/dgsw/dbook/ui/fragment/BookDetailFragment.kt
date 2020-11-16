@@ -122,9 +122,7 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
             }
         }
-
     }
-
 }
 class DeleteBook(val context: Context) : Thread() {
     override fun run() {

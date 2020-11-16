@@ -23,4 +23,8 @@ interface DBookApi {
     @GET("/ebook/list")
     fun getBookList(
     ):Call<BookListData>
+
+    @POST("/library/add")
+    fun addLibrary(@Body request : AddLibraryData
+    ):Call<MyLibraryResponse>
 }
