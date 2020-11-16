@@ -27,6 +27,7 @@ import kr.hs.dgsw.dbook.WorkingNetwork.BaseUrl
 import kr.hs.dgsw.dbook.download.DoDownload
 import kr.hs.dgsw.dbook.local.DBookDatabase
 import kr.hs.dgsw.dbook.local.dao.BookDao
+import kr.hs.dgsw.dbook.local.entity.BookEntity
 import kr.hs.dgsw.dbook.model.BookDetailData
 import kr.hs.dgsw.dbook.model.BookListData
 import kr.hs.dgsw.dbook.ui.module.FeedTime
@@ -68,13 +69,9 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val feedPostTime = FeedTime()
         back_book_btn.setOnClickListener {
             parentFragmentManager.popBackStack() }
-        btn_delete.setOnClickListener {
-            val deleteBook = DeleteBook(requireContext())
-            deleteBook.start()
-        }
+
        //txt_publisher.text = BookDetailData.instance!!.publisher
         //Log.e("pub","pub: ${BookDetailData.instance!!.publisher}")
         BookListData.instance?.content?.forEach {
@@ -124,6 +121,10 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
                             putExtra(kr.hs.dgsw.dbook.EXTRA_BOOK_ID, bookId!!)
                         })
                     }
+                    btn_delete.setOnClickListener {
+                        val deleteBook = DeleteBook(requireContext(), bookId)
+                        deleteBook.start()
+                    }
                 }
 
             }
@@ -132,12 +133,13 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
     }
 
 }
-class DeleteBook(val context: Context) : Thread() {
+class DeleteBook(val context: Context, val bookId: String?) : Thread() {
     override fun run() {
-        /*DBookDatabase
+        DBookDatabase
                 .getDatabase(context)!!
                 .bookDao()
-                .delete()*/
+                .deleteById(bookId!!)
+        Log.e("test","test : $bookId")
     }
 
 }

@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_8dp"
                 android:textColor="@android:color/white"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_profile"
@@ -68,12 +68,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_32dp"
                 android:layout_marginTop="56dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/read_book"
+                android:text="저장된 책"
                 android:textColor="@android:color/white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/txt_read_book"
-                app:layout_constraintEnd_toStartOf="@+id/txt_s_saved_book"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_email" />
 
@@ -81,39 +79,13 @@
                 android:id="@+id/txt_read_book"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/view"
                 app:layout_constraintEnd_toEndOf="@+id/txt_s_read_book"
                 app:layout_constraintStart_toStartOf="@+id/txt_s_read_book"
                 app:layout_constraintTop_toBottomOf="@id/txt_s_read_book"
                 tools:text="2권" />
 
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_s_saved_book"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_16dp"
-                android:text="@string/saved_book"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                app:layout_constraintStart_toEndOf="@+id/txt_s_read_book"
-                app:layout_constraintTop_toTopOf="@+id/txt_s_read_book" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_saved_book"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/view"
-                app:layout_constraintEnd_toEndOf="@+id/txt_s_saved_book"
-                app:layout_constraintStart_toStartOf="@+id/txt_s_saved_book"
-                app:layout_constraintTop_toBottomOf="@id/txt_s_saved_book"
-                tools:text="1권" />
 
             <View
                 android:id="@+id/view"

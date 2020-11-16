@@ -28,4 +28,7 @@ interface BookDao {
 
     @Query("delete from book where downloadId = :downloadId")
     fun deleteByDownloadId(downloadId: Long)
+
+    @Query("delete from book where id = :id")
+    fun deleteById(id: String)
 }
