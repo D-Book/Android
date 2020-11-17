@@ -1,5 +1,5 @@
 package kr.hs.dgsw.dbook.model
 
-class AddLibraryData {
+class AddLibraryData (
     var id : String = ""
-}
+)

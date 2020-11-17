@@ -63,8 +63,6 @@ class MyLibraryFragment : Fragment() {
                 Log.d("item","item : $items 권")
             }
         }
-
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):

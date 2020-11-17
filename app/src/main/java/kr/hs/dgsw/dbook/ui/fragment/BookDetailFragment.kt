@@ -8,6 +8,7 @@ import android.content.IntentFilter
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation.findNavController
@@ -18,9 +19,12 @@ import kotlinx.android.synthetic.main.fragment_book_detail.*
 import kotlinx.android.synthetic.main.fragment_book_detail.txt_category
 import kotlinx.android.synthetic.main.fragment_book_detail.view.*
 import kotlinx.android.synthetic.main.fragment_category_detail.*
+import kotlinx.android.synthetic.main.fragment_category_list.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kr.hs.dgsw.dbook.Applacation.DBookApplication
+import kr.hs.dgsw.dbook.Dialog.LoginDialog
 import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.ViewerActivity
 import kr.hs.dgsw.dbook.WorkingNetwork.BaseUrl
@@ -28,9 +32,12 @@ import kr.hs.dgsw.dbook.download.DoDownload
 import kr.hs.dgsw.dbook.local.DBookDatabase
 import kr.hs.dgsw.dbook.local.dao.BookDao
 import kr.hs.dgsw.dbook.local.entity.BookEntity
-import kr.hs.dgsw.dbook.model.BookDetailData
-import kr.hs.dgsw.dbook.model.BookListData
+import kr.hs.dgsw.dbook.model.*
+import kr.hs.dgsw.dbook.ui.adapter.CategoryListAdapter
 import org.w3c.dom.Comment
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.Calendar.getInstance
 
 const val EXTRA_BOOK_ID = "book_name"
@@ -96,13 +103,25 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
                     .into(img_cover)
             setButton()
         }
+        add_mybook_btn.setOnClickListener{
+            (activity?.application as DBookApplication).requestService()?.myLibrary(AddLibraryData(bookId!!))?.enqueue(object : Callback<MyLibraryResponse> {
+                override fun onFailure(call: Call<MyLibraryResponse>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onResponse(call: Call<MyLibraryResponse>, response: Response<MyLibraryResponse>) {
+                    if (response.isSuccessful){
+                        Toast.makeText(context,"내 서재 추가 완료", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            })
+        }
     }
 
     override fun onStop() {
         super.onStop()
         requireActivity().unregisterReceiver(receiver)
     }
-
     fun setButton() {
         CoroutineScope(Dispatchers.IO).launch {
 
@@ -135,7 +154,6 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
                 }
             }
         }
-
     }
 
 }
@@ -150,4 +168,5 @@ class DeleteBook(val context: Context, val bookId: String?) : Thread() {
         BookDetailFragment()
     }
 }
+
 
