@@ -1,6 +1,8 @@
 package kr.hs.dgsw.dbook.ui.fragment
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -22,6 +24,7 @@ import kotlinx.coroutines.withContext
 import kr.hs.dgsw.dbook.MyAdapter
 import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.WorkingNetwork.BaseUrl
+import kr.hs.dgsw.dbook.getLibrary.GetMyLibrary
 import kr.hs.dgsw.dbook.local.DBookDatabase
 import kr.hs.dgsw.dbook.model.EBookModel
 import kr.hs.dgsw.dbook.model.LoginResponse
@@ -40,11 +43,10 @@ class MyLibraryFragment : Fragment() {
                 .load(LoginResponse.instance!!.update.user!!.profile_image)
                 .circleCrop()
                 .into(img_profile)
-        Log.d("profile","profile : ${LoginResponse.instance!!.update.user!!.profile_image}")
-        Log.d("image","image : ${LoginResponse.instance!!.update.user!!.profile_image}")
 
         Glide.with(requireContext())
                 .load(R.drawable.librarybackground)
+                .override(60,60)
                 .into(img_background)
         view.txt_library_name.text = "김첨지의 서재"
         view.txt_email.text = LoginResponse.instance!!.email
@@ -59,8 +61,6 @@ class MyLibraryFragment : Fragment() {
             withContext(Dispatchers.Main) {
             view.txt_read_book.text = "${items.size} 권"
                 Log.d("item","item : $items 권")
-
-
             }
         }
 
@@ -69,11 +69,13 @@ class MyLibraryFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):
             View? {
+        val activityBox = requireActivity()
+        val getMyLibrary = GetMyLibrary()
         val view = inflater.inflate(R.layout.fragment_my_library, container, false)
         val mAdapter = MyAdapter(requireContext(), bookList)
         val DRV: RecyclerView = view.findViewById(R.id.downloadRecycler)
         DRV.adapter = mAdapter
-
+        getMyLibrary.getLibrary(activityBox.application)
         return view
     }
 }

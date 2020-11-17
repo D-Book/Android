@@ -1,7 +1,14 @@
 package kr.hs.dgsw.dbook.model
 
-class libraryResponse {
-    var status : Int = 0
-    var message : String? = null
-    var books : List<EBookModel>? = null
+import com.google.gson.annotations.SerializedName
+
+data class libraryResponse (
+    var status : Int = 0,
+    var message : String? = null,
+    @SerializedName("object")
+    var bookList : ArrayList<BookArrayData>? = null
+){
+    companion object{
+        var instance : libraryResponse? = null
+    }
 }

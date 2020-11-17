@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
             transaction.commit()
         }
 
-        api.requestService()
+        /*api.requestService()
                 ?.getLibrary()
                 ?.enqueue(object : Callback<libraryResponse>{
             override fun onResponse(call: Call<libraryResponse>, response: Response<libraryResponse>) {
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
             }
 
-        })
+        })*/
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

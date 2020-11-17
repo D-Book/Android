@@ -32,10 +32,10 @@ class MyAdapter (context: Context, val BookList: List<EBookModel>): RecyclerView
 
         fun bind (book: EBookModel) {
             Glide.with(itemView)
-                    .load(book.preview)
+                    .load(book.cover_image)
                     .override(50,150)
                     .into(bookCover)
-            bookTitle.text = book.name
+            bookTitle.text = book.title
         }
     }
 
