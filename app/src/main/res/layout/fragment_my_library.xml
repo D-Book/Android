@@ -106,13 +106,62 @@
             app:behavior_peekHeight="@dimen/my_library_peek_height"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/header_height"
-                android:gravity="center"
-                android:text="다운로드한 책"
-                android:textSize="17sp"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content"
+                android:background="@color/MyLibrary_radio_bg"
+                android:orientation="horizontal"
+                android:padding="2dp"
+                android:layout_margin="12dp">
+
+                <RadioButton
+                    android:id="@+id/my_library_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/mylibrary_radiobtn"
+                    android:button="@null"
+                    android:checked="true"
+                    android:fontFamily="@font/jalnan"
+                    android:minHeight="0dp"
+                    android:text="내 서재"
+                    android:textAlignment="center"
+                    android:textColor="@color/mylibrary_tint"
+                    android:textSize="17sp"
+                    android:tint="@color/secondaryDarkColor" />
+
+
+                <RadioButton
+                    android:id="@+id/download_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/mylibrary_radiobtn"
+                    android:button="@null"
+                    android:fontFamily="@font/jalnan"
+                    android:minHeight="0dp"
+                    android:text="다운로드"
+                    android:textAlignment="center"
+                    android:textColor="@color/mylibrary_tint"
+                    android:textSize="17sp"
+
+                    />
+
+                <RadioButton
+                    android:id="@+id/upload_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/mylibrary_radiobtn"
+                    android:button="@null"
+                    android:fontFamily="@font/jalnan"
+                    android:minHeight="0dp"
+                    android:text="업로드"
+                    android:textAlignment="center"
+                    android:textColor="@color/mylibrary_tint"
+                    android:textSize="17sp" />
+            </RadioGroup>
 
             <View
                 android:layout_width="match_parent"
@@ -127,7 +176,7 @@
                 android:layout_weight="1"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="@integer/span_count"
-                tools:listitem="@layout/item_book_list_2"/>
+                tools:listitem="@layout/item_book_list_2" />
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>

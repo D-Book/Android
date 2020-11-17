@@ -30,4 +30,6 @@
     <color name="already_login_color">#4cd964</color>
     <color name="colorRed">#ff0000</color>
     <color name="colorBlue">#482EF2</color>
+
+    <color name="MyLibrary_radio_bg">#1e767680</color>
 </resources>
