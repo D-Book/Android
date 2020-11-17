@@ -6,25 +6,22 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface DBookApi {
     @POST("/user/login")
     fun login(@Body loginInfo: UserData
-    ):Call<LoginResponse>
+    ): Call<LoginResponse>
 
     @GET("/library")
-    fun getLibrary(
-    ):Call<libraryResponse>
+    fun getLibrary(@Header("Authorization") type: String?
+    ): Call<libraryResponse>
 
     @POST("/user/sign-up")
-    fun signUp(@Body SignUpInfo : RequestBody):Call<SignUpResponse>
+    fun signUp(@Body SignUpInfo: RequestBody): Call<SignUpResponse>
 
     @GET("/ebook/list")
     fun getBookList(
-    ):Call<BookListData>
-
-    @POST("/library/add")
-    fun addLibrary(@Body request : AddLibraryData
-    ):Call<MyLibraryResponse>
+    ): Call<BookListData>
 }

@@ -21,7 +21,7 @@ class DoDownload {
                 .build()
                 .bookDao()
         val downloadManager: DownloadManager? = context.getSystemService(Context.DOWNLOAD_SERVICE) as? DownloadManager
-        val uri = Uri.parse(baseUrl.resolve(bookModel.book_file))
+        val uri = Uri.parse(bookModel.book_file)
         DownloadManager.Request(uri)
                 .setTitle(bookModel.title)
                 .setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
@@ -35,7 +35,7 @@ class DoDownload {
                             File(context.getExternalFilesDir("Download"), bookModel.id + ".epub").path,
                             bookModel.cover_image,
                             bookModel.description,
-                            bookModel.uploader_email,
+                            bookModel.uploader_id,
                             bookModel.publisher,
                             bookModel.published,
                             downloadId!!)

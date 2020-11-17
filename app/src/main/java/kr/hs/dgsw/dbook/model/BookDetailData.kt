@@ -8,7 +8,7 @@ data class BookDetailData(
         var book_file : String = "",
         var cover_image : String = "",
         var description : String = "",
-        var uploader_email : String = "",
+        var uploader_id : String = "",
         var publisher : String = "",
         var published : String =  ""
 ){

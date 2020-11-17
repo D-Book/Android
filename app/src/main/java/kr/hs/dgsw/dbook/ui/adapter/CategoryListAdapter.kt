@@ -14,7 +14,7 @@ class CategoryListAdapter(val categories: List<CategoryData>, val listener: OnCl
 
         fun bind(category: CategoryData) {
             itemView.txt_category_name.text = category.category_name
-            itemView.recycler_view_book_list.adapter = BookDetailDataAdapter(category.data, false) {
+            itemView.recycler_view_book_list.adapter = BookDetailDataAdapter(category.books, false) {
                 listener?.onBookClick(it)
             }
         }

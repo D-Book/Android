@@ -6,13 +6,18 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_book_detail.*
+import kotlinx.android.synthetic.main.fragment_book_detail.txt_category
+import kotlinx.android.synthetic.main.fragment_book_detail.view.*
+import kotlinx.android.synthetic.main.fragment_category_detail.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,7 +30,8 @@ import kr.hs.dgsw.dbook.local.dao.BookDao
 import kr.hs.dgsw.dbook.local.entity.BookEntity
 import kr.hs.dgsw.dbook.model.BookDetailData
 import kr.hs.dgsw.dbook.model.BookListData
-import kr.hs.dgsw.dbook.ui.module.FeedTime
+import org.w3c.dom.Comment
+import java.util.Calendar.getInstance
 
 const val EXTRA_BOOK_ID = "book_name"
 
@@ -38,7 +44,7 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
 
     var bookDao: BookDao? = null
 
-    val receiver = object:BroadcastReceiver(){
+    val receiver = object : BroadcastReceiver() {
         override fun onReceive(p0: Context?, p1: Intent?) {
             setButton()
         }
@@ -63,13 +69,14 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         back_book_btn.setOnClickListener {
-            parentFragmentManager.popBackStack() }
+            parentFragmentManager.popBackStack()
+        }
 
-       //txt_publisher.text = BookDetailData.instance!!.publisher
+        //txt_publisher.text = BookDetailData.instance!!.publisher
         //Log.e("pub","pub: ${BookDetailData.instance!!.publisher}")
         BookListData.instance?.content?.forEach {
             val category = it
-            it.data.forEach {
+            it.books.forEach {
                 if (it.id.equals(bookId)) {
                     book = it
                     txt_category.text = category.category_name
@@ -77,15 +84,14 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
             }
         }
         book?.run {
-            val str = published
-            val result = str.substring(0,10)
             txt_title.text = title
             txt_author.text = author
             txt_explain.text = description
             txt_publisher.text = publisher
-            txt_date.text = result
+
+            // txt_date.text = feedPostTime.calFeedTime(publisher)
             Glide.with(this@BookDetailFragment)
-                    .load(baseUrl.resolve(cover_image))
+                    .load(cover_image)
                     .override(460, 620)
                     .into(img_cover)
             setButton()
@@ -97,8 +103,9 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
         requireActivity().unregisterReceiver(receiver)
     }
 
-    fun setButton(){
+    fun setButton() {
         CoroutineScope(Dispatchers.IO).launch {
+
             val bookEntity = bookDao?.getBookById(bookId!!)
             launch(Dispatchers.Main) {
                 if (bookEntity == null) {
@@ -115,23 +122,32 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
                             putExtra(kr.hs.dgsw.dbook.EXTRA_BOOK_ID, bookId!!)
                         })
                     }
-                    btn_delete.setOnClickListener {
-                        val deleteBook = DeleteBook(requireContext(), bookId)
-                        deleteBook.start()
+
+                }
+                btn_delete.setOnClickListener {
+                    val deleteBook = DeleteBook(requireContext(), bookId)
+                    deleteBook.start()
+                    btn_delete.isEnabled = false
+                    btn_download_read.setText(R.string.download)
+                    btn_download_read.setOnClickListener {
+                        doDownload.doDownload(book!!, requireContext())
                     }
                 }
-
             }
         }
+
     }
+
 }
+
 class DeleteBook(val context: Context, val bookId: String?) : Thread() {
     override fun run() {
         DBookDatabase
                 .getDatabase(context)!!
                 .bookDao()
                 .deleteById(bookId!!)
-        Log.e("test","test : $bookId")
+        Log.e("test", "test : $bookId")
+        BookDetailFragment()
     }
-
 }
+
