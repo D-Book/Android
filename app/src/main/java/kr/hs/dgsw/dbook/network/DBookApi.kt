@@ -16,7 +16,7 @@ interface DBookApi {
 
     @GET("/library")
     fun getLibrary(@Header("Authorization") type: String?
-    ): Call<libraryResponse>
+    ): Call<LibraryResponse>
 
     @POST("/user/sign-up")
     fun signUp(@Body SignUpInfo: RequestBody): Call<SignUpResponse>

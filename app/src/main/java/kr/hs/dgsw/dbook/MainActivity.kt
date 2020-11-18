@@ -1,23 +1,17 @@
 package kr.hs.dgsw.dbook
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kr.hs.dgsw.dbook.Applacation.DBookApplication
-import kr.hs.dgsw.dbook.model.libraryResponse
 import kr.hs.dgsw.dbook.ui.fragment.BookListFragment
 import kr.hs.dgsw.dbook.ui.fragment.EXTRA_CATEGORY_ID
 import kr.hs.dgsw.dbook.ui.fragment.MyLibraryFragment
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     var fm = supportFragmentManager
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +20,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         // val view = findViewById<RecyclerView>(R.layout.fragment_book_list,savedInstanceState)
         val lm = LinearLayoutManager(applicationContext)
         //view.book_list_recyclerview.adapter = CustomAdapter(databaseList())
-       // view.book_list_recyclerview.setHasFixedSize(true)
-       // view.book_list_recyclerview.layoutManager = lm
+        //view.book_list_recyclerview.setHasFixedSize(true)
+        //view.book_list_recyclerview.layoutManager = lm
         intent?.data?.asMultipart("test",contentResolver)
         fm = supportFragmentManager
         val bnw = findViewById<BottomNavigationView>(R.id.nav_view)

@@ -33,7 +33,7 @@ import java.lang.NullPointerException
 
 class MyLibraryFragment : Fragment() {
     var bookList = arrayListOf<EBookModel>()
-    private val baseUrl = BaseUrl()
+
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -48,10 +48,9 @@ class MyLibraryFragment : Fragment() {
                 .load(R.drawable.librarybackground)
                 .override(60,60)
                 .into(img_background)
-        view.txt_library_name.text = "김첨지의 서재"
+        view.txt_library_name.text = LoginResponse.instance!!.update.user!!.name + "의 서재"
         view.txt_email.text = LoginResponse.instance!!.email
-        //val getBook = GetBook(requireContext())
-        //getBook.start()
+
         CoroutineScope(Dispatchers.IO).launch {
             val items = DBookDatabase
                     .getDatabase(requireContext())!!
@@ -60,7 +59,7 @@ class MyLibraryFragment : Fragment() {
 
             withContext(Dispatchers.Main) {
             view.txt_read_book.text = "${items.size} 권"
-                Log.d("item","item : $items 권")
+
             }
         }
 

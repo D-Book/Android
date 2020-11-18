@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_book_list.view.*
 import kr.hs.dgsw.dbook.model.EBookModel
 
-class MyAdapter (context: Context, val BookList: List<EBookModel>): RecyclerView.Adapter<MyAdapter.Holder>() {
+class MyAdapter (context: Context,private val BookList: List<EBookModel>): RecyclerView.Adapter<MyAdapter.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_book_list, parent, false)
         return Holder(view)
@@ -38,6 +38,5 @@ class MyAdapter (context: Context, val BookList: List<EBookModel>): RecyclerView
             bookTitle.text = book.title
         }
     }
-
 }
 
