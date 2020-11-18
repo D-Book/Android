@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kr.hs.dgsw.dbook.R
 import kr.hs.dgsw.dbook.WorkingNetwork.BaseUrl
+import kr.hs.dgsw.dbook.local.entity.BookEntity
 import kr.hs.dgsw.dbook.model.BookDetailData
 
-class BookDetailDataAdapter(val BookList: List<BookDetailData>, val grid: Boolean = true, val listener: (String) -> Unit) : RecyclerView.Adapter<BookDetailDataAdapter.Holder>() {
+class BookEntityAdapter(val BookList: List<BookEntity>, val grid: Boolean = true, val listener: (String) -> Unit) : RecyclerView.Adapter<BookEntityAdapter.Holder>() {
 
     val baseUrl = BaseUrl()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookDetailDataAdapter.Holder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookEntityAdapter.Holder {
         val layoutId = when (grid) {
             true -> R.layout.item_book_list_2
             else -> R.layout.item_book_list
@@ -36,7 +37,7 @@ class BookDetailDataAdapter(val BookList: List<BookDetailData>, val grid: Boolea
         var bookCover: ImageView = itemView.findViewById(R.id.img_cover)
         var bookTitle: TextView = itemView.findViewById(R.id.txt_title)
 
-        fun bind(book: BookDetailData) {
+        fun bind(book: BookEntity) {
             Glide.with(itemView)
                     .load(book.cover_image)
                     .into(bookCover)
@@ -44,7 +45,7 @@ class BookDetailDataAdapter(val BookList: List<BookDetailData>, val grid: Boolea
         }
     }
 
-    override fun onBindViewHolder(holder: BookDetailDataAdapter.Holder, position: Int) {
+    override fun onBindViewHolder(holder: BookEntityAdapter.Holder, position: Int) {
         holder.bind(BookList[position])
     }
 }

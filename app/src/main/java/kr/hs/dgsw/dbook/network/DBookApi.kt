@@ -15,7 +15,7 @@ interface DBookApi {
     ): Call<LoginResponse>
 
     @GET("/library")
-    fun getLibrary(@Header("Authorization") type: String?
+    fun getLibrary(
     ): Call<libraryResponse>
 
     @POST("/user/sign-up")
@@ -29,4 +29,8 @@ interface DBookApi {
     @POST("/library/add")
     fun myLibrary(@Body addLibraryData: AddLibraryData
     ): Call<MyLibraryResponse>
+
+    @GET("/library/uploaded")
+    fun uploadLibrary(
+    ): Call<libraryResponse>
 }

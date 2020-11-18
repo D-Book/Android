@@ -6,7 +6,7 @@ data class libraryResponse (
     var status : Int = 0,
     var message : String? = null,
     @SerializedName("object")
-    var bookList : ArrayList<BookArrayData>? = null
+    var bookList : LibraryObjectData? = null
 ){
     companion object{
         var instance : libraryResponse? = null

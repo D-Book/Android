@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_book_detail.*
@@ -52,8 +51,26 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
     var bookDao: BookDao? = null
 
     val receiver = object : BroadcastReceiver() {
-        override fun onReceive(p0: Context?, p1: Intent?) {
-            setButton()
+        override fun onReceive(p0: Context?, intent: Intent?) {
+            val downloadManager: DownloadManager? = context?.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager?
+            val downloadId = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1) ?: -1
+            downloadManager?.let {
+                val c = it.query(DownloadManager.Query().setFilterById(downloadId))
+                val columnIndex = c.getColumnIndex(DownloadManager.COLUMN_STATUS)
+                if (c.moveToFirst()) {
+                    when (c.getInt(columnIndex)) {
+                        DownloadManager.STATUS_SUCCESSFUL -> {
+                            // 다운로드 성공
+                            setButton()
+                        }
+                        else -> {
+                            // 다운로드 실패
+                            Toast.makeText(context, "다운로드 실패", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                }
+            }
         }
 
     }
@@ -103,15 +120,15 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
                     .into(img_cover)
             setButton()
         }
-        add_mybook_btn.setOnClickListener{
+        add_mybook_btn.setOnClickListener {
             (activity?.application as DBookApplication).requestService()?.myLibrary(AddLibraryData(bookId!!))?.enqueue(object : Callback<MyLibraryResponse> {
                 override fun onFailure(call: Call<MyLibraryResponse>, t: Throwable) {
                     TODO("Not yet implemented")
                 }
 
                 override fun onResponse(call: Call<MyLibraryResponse>, response: Response<MyLibraryResponse>) {
-                    if (response.isSuccessful){
-                        Toast.makeText(context,"내 서재 추가 완료", Toast.LENGTH_SHORT).show();
+                    if (response.isSuccessful) {
+                        Toast.makeText(context, "내 서재 추가 완료", Toast.LENGTH_SHORT).show();
                     }
                 }
             })
@@ -122,6 +139,7 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
         super.onStop()
         requireActivity().unregisterReceiver(receiver)
     }
+
     fun setButton() {
         CoroutineScope(Dispatchers.IO).launch {
 
@@ -155,7 +173,6 @@ class BookDetailFragment : Fragment(R.layout.fragment_book_detail) {
             }
         }
     }
-
 }
 
 class DeleteBook(val context: Context, val bookId: String?) : Thread() {

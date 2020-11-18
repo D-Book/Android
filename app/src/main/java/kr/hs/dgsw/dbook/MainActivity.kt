@@ -10,6 +10,7 @@ import kr.hs.dgsw.dbook.Applacation.DBookApplication
 import kr.hs.dgsw.dbook.model.libraryResponse
 import kr.hs.dgsw.dbook.ui.fragment.BookListFragment
 import kr.hs.dgsw.dbook.ui.fragment.EXTRA_CATEGORY_ID
+import kr.hs.dgsw.dbook.ui.fragment.MyLibraryContainerFragment
 import kr.hs.dgsw.dbook.ui.fragment.MyLibraryFragment
 import retrofit2.Call
 import retrofit2.Callback
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.navigation_book_list -> fm.beginTransaction().replace(R.id.nav_host_fragment, BookListFragment()).commit()
-            R.id.navigation_my_library -> fm.beginTransaction().replace(R.id.nav_host_fragment, MyLibraryFragment()).commit()
+            R.id.navigation_my_library -> fm.beginTransaction().replace(R.id.nav_host_fragment, MyLibraryContainerFragment()).commit()
         }
         return true
     }

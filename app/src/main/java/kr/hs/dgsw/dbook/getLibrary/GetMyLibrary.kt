@@ -25,7 +25,7 @@ class GetMyLibrary (){
         val accessToken = LoginResponse.instance!!.token
         val api = (getApplication as DBookApplication)
                 .requestService()
-        api?.getLibrary(accessToken)
+        api?.getLibrary()
                 ?.enqueue(object : Callback<libraryResponse> {
 
                     override fun onResponse(

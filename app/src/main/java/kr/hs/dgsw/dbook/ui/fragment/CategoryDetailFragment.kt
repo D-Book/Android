@@ -33,7 +33,8 @@ class CategoryDetailFragment : Fragment(R.layout.fragment_category_detail) {
             categoryId = it.getString(EXTRA_CATEGORY_ID)
         }
     }
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_back.setOnClickListener {
 
