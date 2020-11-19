@@ -9,9 +9,9 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import kr.hs.dgsw.dbook.Applacation.DBookApplication
 import kr.hs.dgsw.dbook.Dialog.LoginDialog
 import kr.hs.dgsw.dbook.MainActivity
+import kr.hs.dgsw.dbook.model.LibraryResponse
 import kr.hs.dgsw.dbook.model.LoginResponse
 import kr.hs.dgsw.dbook.model.UserData
-import kr.hs.dgsw.dbook.model.libraryResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,16 +26,16 @@ class GetMyLibrary (){
         val api = (getApplication as DBookApplication)
                 .requestService()
         api?.getLibrary()
-                ?.enqueue(object : Callback<libraryResponse> {
+                ?.enqueue(object : Callback<LibraryResponse> {
 
                     override fun onResponse(
-                            call: Call<libraryResponse>,
-                            response: Response<libraryResponse>
+                            call: Call<LibraryResponse>,
+                            response: Response<LibraryResponse>
 
                     ) {
                         //통신성공
                         if (response.code() == 200) {
-                            libraryResponse.instance = response.body()
+                            LibraryResponse.instance = response.body()
 
                         }
                         //통신 실패
@@ -46,7 +46,7 @@ class GetMyLibrary (){
                     }
 
                     //서버와 연결 실패
-                    override fun onFailure(call: Call<libraryResponse>, t: Throwable) {
+                    override fun onFailure(call: Call<LibraryResponse>, t: Throwable) {
 
 
                     }

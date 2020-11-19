@@ -83,12 +83,12 @@ class MyLibraryFragment : Fragment() {
                 Log.d("item", "item : $bookList 권")
             }
         }
-        (activity?.application as DBookApplication).requestService()?.getLibrary()?.enqueue(object : Callback<libraryResponse> {
-            override fun onFailure(call: Call<libraryResponse>, t: Throwable) {
+        (activity?.application as DBookApplication).requestService()?.getLibrary()?.enqueue(object : Callback<LibraryResponse> {
+            override fun onFailure(call: Call<LibraryResponse>, t: Throwable) {
 
             }
 
-            override fun onResponse(call: Call<libraryResponse>, response: Response<libraryResponse>) {
+            override fun onResponse(call: Call<LibraryResponse>, response: Response<LibraryResponse>) {
                 if (response.isSuccessful) {
                     response.body()?.let {
                         val adapter = BookDetailDataAdapter(it.bookList!!.books!!) {
@@ -100,12 +100,12 @@ class MyLibraryFragment : Fragment() {
             }
         })
         my_library_btn.setOnClickListener {
-            (activity?.application as DBookApplication).requestService()?.getLibrary()?.enqueue(object : Callback<libraryResponse> {
-                override fun onFailure(call: Call<libraryResponse>, t: Throwable) {
+            (activity?.application as DBookApplication).requestService()?.getLibrary()?.enqueue(object : Callback<LibraryResponse> {
+                override fun onFailure(call: Call<LibraryResponse>, t: Throwable) {
 
                 }
 
-                override fun onResponse(call: Call<libraryResponse>, response: Response<libraryResponse>) {
+                override fun onResponse(call: Call<LibraryResponse>, response: Response<LibraryResponse>) {
                     if (response.isSuccessful) {
                         response.body()?.let {
                             val adapter = BookDetailDataAdapter(it.bookList!!.books!!) {
@@ -118,12 +118,12 @@ class MyLibraryFragment : Fragment() {
             })
         }
         upload_btn.setOnClickListener {
-            (activity?.application as DBookApplication).requestService()?.uploadLibrary()?.enqueue(object : Callback<libraryResponse> {
-                override fun onFailure(call: Call<libraryResponse>, t: Throwable) {
+            (activity?.application as DBookApplication).requestService()?.uploadLibrary()?.enqueue(object : Callback<LibraryResponse> {
+                override fun onFailure(call: Call<LibraryResponse>, t: Throwable) {
 
                 }
 
-                override fun onResponse(call: Call<libraryResponse>, response: Response<libraryResponse>) {
+                override fun onResponse(call: Call<LibraryResponse>, response: Response<LibraryResponse>) {
                     if (response.isSuccessful) {
                         response.body()?.let {
                             val adapter = BookDetailDataAdapter(it.bookList!!.books!!) {
